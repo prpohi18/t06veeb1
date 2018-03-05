@@ -18,7 +18,7 @@ public class Rakendus {
     }
 
     @RequestMapping("/")
-    String tervitus2(String eesnimi){
+    String rootFolder(String eesnimi){
         return "Root page!";
     }
  
