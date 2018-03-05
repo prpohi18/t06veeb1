@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KMI kalkulaator</title>
+  <script>
+  let xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=showAnswer;
+	function kmi(){
+		let query="weight="+document.getElementById("box1").value+"&length="+document.getElementById("box2").value;
+		xhr.open("GET", "kmi?"+query, true);
+		xhr.send(true);
+	}
+	
+	function showAnswer(){
+		if(xhr.readyState==4){
+			document.getElementById("answer").innerHTML=xhr.responseText;
+		}
+	}
+	</script>
+  <style>
+        @import url('https://fonts.googleapis.com/css?family=Abel|Anton|Dhurjati');
+  </style>
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+        
+        <div id="wrapper" class="header nightmode">
+                        <div id="shorcuts">
+                                <a class="btn" href="http://www.facebook.com">Facebook</a>
+                                <a class="btn" href="http://gmail.google.com">Gmail</a>
+                                <a class="btn" href="http://www.tlu.ee">Tallinn University</a>
+                                <a class="btn" href="https://t06veeb1.herokuapp.com/kmiPage.html">Heroku</a>
+                        </div>
+                <div class="container">
+                        <h2>Kehamassiindeksi kalkulaator</h2>
+						<br>
+						Kaal (kg): <br>
+						<input type="number"  value="" id="box1" /> <br>
+						Pikkus (m): <br>
+						<input type="number"  value="" id="box2" />
+						<br>
+						<br>
+						<input class="btn" type="button" value="Arvuta KMI" onclick="kmi()"/>
+						<br>
+						<br>
+						<div id="answer"></div>
+                </div>
+                <div class="footer">
+                        <p>&copy; Mihkel Mägi</p>
+                </div>
+
+</body>
+</html>

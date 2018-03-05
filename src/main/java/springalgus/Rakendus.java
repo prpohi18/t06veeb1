@@ -18,8 +18,24 @@ public class Rakendus {
     }
 	
 	@RequestMapping("/multiply")
-	int multiply(int value1, int value2){
+	double multiply(double value1, double value2){
 		return value1*value2;
+	}
+	
+	@RequestMapping("/kmi")
+	String kmi(double weight, double length){
+		double bmi = Math.round(((weight/(length*length)) * 100d) / 100d);
+		String kmi = String.valueOf(bmi);
+		if (bmi<19){
+			kmi = kmi + ". Oled alakaaluline! ";
+		}
+		if (bmi>=25){
+			kmi = kmi + ". Oled ülekaaluline! ";
+		}
+		if (bmi>=19 && bmi<25){
+			kmi = kmi + ". Oled normaalkaalus. ";
+		}
+		return "Sinu kehamassiindeks on "+ kmi;
 	} 
  
     public static void main(String[] args) {
