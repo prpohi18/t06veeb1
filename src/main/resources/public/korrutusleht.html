@@ -7,8 +7,8 @@
       xhr.onreadystatechange=kuvaVastus;
       function arvutamine(){
         let p2ring ="arv1="+document.getElementById("kast1").value+
-          "arv2="+document.getElementById("kast2").value;
-        xhr.open("GET", "korrutus, true");
+          "&arv2="+document.getElementById("kast2").value;
+        xhr.open("GET", "korrutus?"+p2ring, true);
         xhr.send(true);
 
       }
