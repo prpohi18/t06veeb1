@@ -43,3 +43,5 @@ public class Rakendus {
         SpringApplication.run(Rakendus.class, args);
     }
 }
+
+//heroku link: https://t06veeb1.herokuapp.com/kmiPage.html
