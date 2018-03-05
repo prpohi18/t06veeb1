@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Korrutis</title>
+  <script>
+  let xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = kuvaVastus;
+  function arvutamine(){
+	let p2ring ="arv1="+document.getElementById("arv1").value+"&arv2="+document.getElementById("arv2").value;
+	xhr.open("GET", "korrutis?"+p2ring, true);
+	xhr.send(true);
+  }
+  function kuvaVastus(){
+	if(xhr.readyState == 4){
+		document.getElementById("vastus").innerHTML = xhr.responseText;
+	}
+  }
+  </script>
+</head>
+<body>
+	<img src ="javalogo52x88.gif" /> <br/>
+	<input type="number" value ="5" id="arv1">
+	<input type="number" value ="6" id="arv2">
+	<input type="button" value ="Arvuta" onclick="arvutamine()">
+	<div id="vastus">vastuse koht</div>
+</body>
+</html>
