@@ -22,7 +22,7 @@ public class Rakendus {
         return "Root page!";
     }
     @RequestMapping("/korrutis")
-    int rootFolder(int arv1, int arv2){
+    int korrutis(int arv1, int arv2){
         return arv1 * arv2;
     }
  
