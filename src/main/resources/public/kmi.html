@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Kehamassiindeksi kalkulaator</title>
+	<style>
+
+	</style>
+	<script>
+	let xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=kuvaVastus;
+		function arvutamine(){
+		let p2ring="kaal="+document.getElementById("weight").value+
+		"&pikkus="+document.getElementById("height").value;
+			xhr.open("GET", "kehamassiindeks?"+p2ring, true);
+			xhr.send(true);
+		}
+		function kuvaVastus(){
+			if(xhr.readyState==4){
+			document.getElementById("vastus").innerHTML=xhr.responseText;
+			}
+		
+		}
+	</script>
+	</head>
+	<body>
+	
+	<div align="center">
+	<br><br><br><br><br><br><br>
+	<img src="kmilogo.png" /><br />
+	<br>
+	<input type="text" id="weight" placeholder="Sisesta kaal (kg)"/><br>
+	<br>
+	<input type="text" id="height" placeholder="Sisesta pikkus (m)"/><br>
+	<br>
+	<input type="button" value="Arvuta KMI" align="center" onclick="arvutamine()" /><br>
+	<br>
+	<h2><div id="vastus"></div></h2>
+	<br>
+	<p>Tervisele ohtlik alakaal	<mark>< 16</mark><br>
+		Alakaal	<mark>16 - 18.9</mark><br>
+		Normaalkaal	<mark>19 - 25</mark><br>
+		Ülekaal	<mark>25.1 - 30</mark><br>
+		Rasvumine	<mark>30.1 - 35</mark><br>
+		Tugev rasvumine	<mark>35.1 - 40</mark><br>
+		Tervisele ohtlik rasvumine	<mark>> 40.1</mark></p>
+	</div>
+	
+	</body>
+</html>
