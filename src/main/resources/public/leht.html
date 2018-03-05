@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programmeerimise põhikursus</title>
+    <script>
+    let xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=kuvaVastus;
+    function arvutamine(){
+        let p2ring="arv1="+document.getElementById("box1").value+
+            "&arv2="+document.getElementById("box2").value
+        xhr.open("GET", "korrutis?"+p2ring, true);
+        xhr.send(true);
+    }
+    function kuvaVastus(){
+        if(xhr.readyState==4){
+            document.getElementById("vastus").innerHTML=xhr.responseText;
+        }
+    }
+</script>
+</head>
+<body>
+    <form action="" method="get"></form>
+    <input type="number" value="5" id="box1">x <br>
+    <input type="number" value="4" id="box2">y <br>
+    <input type="button" value="Arvuta" onclick="arvutamine()">
+    <div id="vastus">Vastus</div>
+</body>
+</html> 
