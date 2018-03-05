@@ -11,13 +11,13 @@ public class Rakendus {
     String tervitusfunktsioon() {
         return "Ahoi!";
     }
-	@RequestMappping("/tervitus")
+	@RequestMapping("/tervitus")
 	String tervitus2(String eesnimi) {
 		return "Tere, "+eesnimi; 
 	}
 	
 	@RequestMapping("/korrutus")
-	int korrutamine(int arv, int arv2){
+	int korrutamine(int arv1, int arv2){
 		return arv1*arv2;
 	}
     public static void main(String[] args) {
