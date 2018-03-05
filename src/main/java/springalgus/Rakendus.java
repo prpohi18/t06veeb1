@@ -12,9 +12,14 @@ public class Rakendus {
         return "Ahoi!";
     }
     
-    @RequestMapping("/tervitus")
+    @RequestMapping("/tere")
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
+    }
+
+    @RequestMapping("/")
+    String tervitus2(String eesnimi){
+        return "Root page!";
     }
  
     public static void main(String[] args) {
