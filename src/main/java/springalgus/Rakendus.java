@@ -31,3 +31,6 @@ public class Rakendus {
         SpringApplication.run(Rakendus.class, args);
     }
 }
+
+//java -jar -Dserver.port=8008 target/boot3-1.0-SNAPSHOT.jar
+
