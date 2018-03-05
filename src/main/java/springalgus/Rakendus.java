@@ -16,6 +16,11 @@ public class Rakendus {
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
     }
+	
+	@RequestMapping("/korrutis")
+	int korrutis(int arv1, int arv2) {
+		return arv1*arv2;
+	}
  
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
