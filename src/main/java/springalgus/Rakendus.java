@@ -13,8 +13,8 @@ public class Rakendus {
     }
     
     @RequestMapping("/tervitus")
-    String tervitus2(String eesnimi){
-        return "Tere, "+eesnimi;
+    String tervitus2(String name){
+        return "Tere, "+name;
     }
  
     public static void main(String[] args) {
