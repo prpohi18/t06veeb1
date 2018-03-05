@@ -28,5 +28,5 @@ public class Rakendus {
     }
 }
 
--->//java -jar -Dserver.port=43004 target/boot3-1.0-SNAPSHOT.jar
+//java -jar -Dserver.port=43004 target/boot3-1.0-SNAPSHOT.jar
 
