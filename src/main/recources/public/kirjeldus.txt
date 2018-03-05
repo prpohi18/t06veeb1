@@ -1,0 +1,4 @@
+Veebilehestiku kirjeldus
+
+Siinne veebilehestik loodi Spring Boot rakenduse võimaluste katsetamiseks
+Programmeerimise põhikursuse juures
