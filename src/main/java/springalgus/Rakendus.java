@@ -22,6 +22,15 @@ public class Rakendus {
         return arv1*arv2;
     }
     
+    @RequestMapping("/arvudLiitmine")
+    int tykeldamine(String arvud){
+        int summa = 0;
+        String[] tykid = arvud.split(",");
+        for(int i=0;i<tykid.length;i++){
+            summa+=Integer.parseInt(tykid[i]);
+        }
+        return summa;
+    }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);

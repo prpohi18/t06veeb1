@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arvud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let a3=document.getElementById("kast3").value;
+                
+                let aadress ="/arvudLiitmine?arvud="+a1+","+a2+","+a3
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>testing</div>
+        <input type="text" id="kast1"/>
+        <input type="text" id="kast2"/>
+        <input type="text" id="kast3"/>
+        <input type="button" value="=" onclick="sisestaArvud()"/>
+        <span id="vastus">Vastuse koht</span>
+    </body>
+</html>
