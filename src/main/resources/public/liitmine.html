@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Sisesta arvud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let a3=document.getElementById("kast3").value;
+                let aadress="/liida?arv1="+a1+"&arv2="+a2+"&arv3="+a3;
+                xhr.open("GET", aadress, true);
+                xhr.send();
+            
+            }
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
+    
+    </script>
+    </head>
+    <body>
+        <div>Sisesta kolm arvu:</div>
+    </body>
+</html>
