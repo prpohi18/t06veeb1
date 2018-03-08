@@ -12,6 +12,11 @@ public class Rakendus {
         return "Ahoi!";
     }
     
+    @RequestMapping("/korrutus")
+    int korrutamine(int arv1, int arv2){
+        return arv1*arv2;
+    }
+    
     @RequestMapping("/tervitus")
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
