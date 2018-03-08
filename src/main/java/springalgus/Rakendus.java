@@ -18,8 +18,21 @@ public class Rakendus {
     }
     
     @RequestMapping("/korrutus")
-    int korrutamine(int arv1, int arv2){
+    float korrutamine(float arv1, float arv2){
         return arv1*arv2;
+    }
+    
+    @RequestMapping("/summa")
+    public int arvudeLiitmine(String sisu){
+        String[] m=sisu.split(",");
+        int summa=0;
+        for(int i=0; i<m.length; i++){
+            summa+=Integer.parseInt(m[i].trim());
+        }
+        //return summa;
+        
+        return java.util.Arrays.stream(sisu.split(",")).
+                mapToInt(s -> Integer.parseInt(s.trim())).sum();
     }
  
     public static void main(String[] args) {
