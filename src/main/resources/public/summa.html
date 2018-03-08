@@ -6,19 +6,20 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Rakenduse kirjeldus</title>
+        <title>Summa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
+    </head>
+    <script>
             
             
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange=kuvaVastus;
             
             function sisestaArvud(){
-                let a1=document.getElementById("kast1").value;
-                let a2=document.getElementById("kast2").value;
-                let aadress="/korrutus?arv1="+a1+"&arv2="+a2;
+                let S1=document.getElementById("kast1").value;
+                
+                let aadress="/summa?arvud=+"arvud"+S1;
                 xhr.open("GET",aadress,true);
                 xhr.send();
             
@@ -33,14 +34,10 @@ and open the template in the editor.
     </head>
     <body>
         <div>Kursuse raames loodud proovilehestik</div>
-        <input type="number" id="kast1" /> *
-        <input type="number" id="kast2" /> 
+        <input type="number" id="kast1" /> 
+       
         <input type="button" value="=" onclick="sisestaArvud()" />
         <span id="vastus">vastuse koht</span>
-        <br/>
-        Koosta Java funktsioon, kuhu sisse andtakse komadega eraldatud arvud, väljastatakse nende arvude summa<br/>
-        javascripti leht 3 tekstiväljaga, kasutaja sisestab iga välja sisse arvu ning eelnevalt loodud funktsiooni abil leitakse nende arvude summa ja kuvatakse<br/>
-        Täiendus: sisestavate arvude kogus pole piiratud
-        
+        <div>Leiab summa</div>
     </body>
 </html>

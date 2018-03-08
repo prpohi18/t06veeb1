@@ -20,6 +20,16 @@ public class Rakendus {
      int korrutamine(int arv1, int arv2){
          return arv1*arv2;
      }
+     @RequestMapping("/summa")
+     int summeerimine(String arvud){
+         int summa = 0;
+         String[] m = arvud.split(",");
+         for(int i=0; i<m.length;i++){
+             summa = summa+ Integer.parseInt(m[i]);
+         }
+     return summa;
+     }
+     
  
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
