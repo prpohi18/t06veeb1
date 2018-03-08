@@ -19,7 +19,7 @@ and open the template in the editor.
             function sisestaArvud(){
                 let S1=document.getElementById("kast1").value;
                 
-                let aadress="/summa?arvud=+"arvud"+S1;
+                let aadress="/testsumma?arvud="+S1;
                 xhr.open("GET",aadress,true);
                 xhr.send();
             
@@ -34,7 +34,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>Kursuse raames loodud proovilehestik</div>
-        <input type="number" id="kast1" /> 
+        <input type="text" id="kast1" /> 
        
         <input type="button" value="=" onclick="sisestaArvud()" />
         <span id="vastus">vastuse koht</span>

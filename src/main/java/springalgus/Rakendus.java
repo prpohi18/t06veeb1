@@ -20,7 +20,7 @@ public class Rakendus {
      int korrutamine(int arv1, int arv2){
          return arv1*arv2;
      }
-     @RequestMapping("/summa")
+     @RequestMapping("/testsumma")
      int summeerimine(String arvud){
          int summa = 0;
          String[] m = arvud.split(",");
