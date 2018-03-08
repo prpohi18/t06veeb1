@@ -24,14 +24,6 @@ and open the template in the editor.
                     document.getElementById("vastus").innerHTML=xhr.responseText;
                 }
             }
-            function summa(){
-                let a3=document.getElementById("kast3").value;
-                let a4=document.getElementById("kast4").value;
-                let a5=document.getElementById("kast5").value; 
-                let aadress="/summa?arv3="+a3+"&arv4="+a4+"&arv5="+a5;
-                xhr.open("GET", aadress, true);
-                xhr.send();
-            }
             
         </script>
     </head>
@@ -42,12 +34,6 @@ and open the template in the editor.
         <input type="number" id="kast2" />
         <input type="button" value="=" onclick="sisestaArvud()" />
         <span id="vastus">Vastuse koht</span>
-        <br><br>
-        <input type="text" value="Arv" id="kast3" /> +
-        <input type="text" value="Arv" id="kast4" /> +
-        <input type="text" value="Arv" id="kast5" />
-        <input type="button" value="=" onclick="summa()" />
-        <span id="summa">Vastuse koht</span>
         
     </body>
 </html>

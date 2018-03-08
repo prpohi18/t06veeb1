@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arvutusleht</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr= new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            function lisaKast(){
+                document.getElementById("sisestus").innerHTML+=
+                "<input type='number' /><br />"
+            }
+            function nupuVajutus(){
+                lisaKast();
+            }
+            function saadaAndmed(){
+                let kastid=document.getElementById("sisestus").getElementsByTagName("input");
+                sisu=Array.prototype.slice.call(kastid).map(kast => kast.value).join(",");
+                xhr.open("GET", "/summa?sisu="+sisu, true);
+                xhr.send();
+            }
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
+        </script>
+    </head>
+    <body onload='lisaKast(); lisaKast()'>
+        <h1>Arvutamine</h1>
+        <div id="sisestus"></div>
+        <div id="vastus"></div>
+        <br>
+        <input type="button" value="Lisa uus kast" onclick="nupuVajutus()" /> 
+        <input type="button" value="Arvuta" onclick="saadaAndmed()" />
+    </body>
+</html>
