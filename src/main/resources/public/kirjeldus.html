@@ -25,6 +25,11 @@ and open the template in the editor.
                 document.getElementById("vastus").innerHTML=xhr.responseText;
                 }
             }
+            
+            
+            
+                      
+
         </script>    
     </head>
     <body>
@@ -32,7 +37,22 @@ and open the template in the editor.
         <input type="number" id="kast1"/>x
         <input type="number" id="kast2"/>
         <input type="button" value="=" onclick="sisestaArvud()"/>
-        <span id="vastus">Vastuse koht<span>
+        <span id="vastus"> Vastuse koht <span>
+        
+        <br/>
+        <br>
+        <input type="text" id="tekst1" value="arv1"/> <br>
+        <input type="text" id="tekst2" value="arv2"/> <br>
+        <input type="text" id="tekst3" value="arv3"/> <br>
+        <span id="vastus1"> Vastuse koht <span>
+        
+        Koosta java funktsioon, kuhu sisse antakse komadega eraldatud arvud Stringina,
+        väljastatakse nende arvude summa
+        <br/>
+        Koosta Javascriptiga leht, kus on kolm tekstivälja. Kasutaja sisestab iga välja
+        sisse arvu, eelnevalt loodud Java funktsiooni abil leitakse nende arvude summa ja kuvatakse
+        <br/>
+        Täiendus: sisestatavate arvude kogus pole piiratud
     </body>
 </html>
 
