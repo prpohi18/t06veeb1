@@ -35,7 +35,7 @@ public class Rakendus {
 		double kmi=(Integer.parseInt(kaal)*1.0) / pikkusRuut;
 		return String.valueOf(kmi);
 	}
-	
+	//https://programmeerimine.herokuapp.com/kehamassindeks.html
 	
 
  
