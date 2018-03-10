@@ -30,11 +30,10 @@ public class Rakendus {
 			if (d >= 0) {
 				x1 = (-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c)) ) / (2 * a);
 				x2 = (-b - Math.sqrt(Math.pow(b, 2) - (4 * a * c)) ) / (2 * a);
-				vastus = ("X1 = " + x1 + " X2 = "+x2);
+				return "X1 = " + x1 + " X2 = " + x2;
 			} else {
-				vastus = ("ülesandel puuduvad lahendid");
+				return "Ülesandel puuduvad lahendid";
 			}
-			return vastus;
 		}
 		
     public static void main(String[] args) {
