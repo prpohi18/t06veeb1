@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kehamassiindeksi arvutamine</title>
+		<script>
+			let xhr= new XMLHttpRequest();
+			xhr.onreadystatechange=kuvaVastus;
+			
+			function saadaAndmed(){
+				let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value;
+				xhr.open("GET", "/kmindeks/"+parameetrid, true);
+				xhr.send(true);
+			}
+			
+			function kuvaVastus(){
+				if(xhr.readyState==4){ //4 tähendab et andmed on kohal
+				document.getElementById("vastus").innerHTML=xhr.responseText;
+				}
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<p>Kehamassiindeksi arvutus:</p>
+		<p>Sisesta pikkus (cm)</p>
+		<input type="number" id="kast1" value="pikkus"/>
+		<p>Sisesta kaal (kg)</p>
+		<input type="number" id="kast2" value="kaal"/>
+		<input type="button" value="=" onClick="saadaAndmed()"   /> 
+		<div id="vastus">KMI</div>
+		<br><br>
+		<p>Alakaal: < 19</p>
+		<p>Normkaal: 19-24.9</p>
+		<p>Ylekaal: > 25</p>
+	</body>
+</html>
