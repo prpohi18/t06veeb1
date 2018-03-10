@@ -8,7 +8,7 @@
             xhr.onreadystatechange=kuvaVastus;
             function ruut() {
                 let arv = document.getElementById("kast").value;
-                let aadress="/ruut?arv=arv*arv;";
+                let aadress="/ruut?arv="+arv;
                 xhr.open("GET", aadress, true);
                 xhr.send();
             }
@@ -23,7 +23,8 @@
     <body>
         <h1>Ruut</h1>
         <input type="number" id="kast">
-        <span id="vastus">Vastuse koht</span>
+        <input type='button' value="arvuta" onclick="ruut()" />
+        <div id="vastus">Vastuse koht</div>
         
     </body>
 </html>
