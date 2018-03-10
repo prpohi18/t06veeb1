@@ -6,24 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Programmeerimise põhikursus</title>
     <script>
-    let xhr=new XMLHttpRequest()
-    xhr.onreadystatechange=kuvaVastus
-    function mac(){
-        let p2ring="mac="+document.getElementById("input").value
-        xhr.open("GET", "t06?"+p2ring, true)
-        xhr.send(true)
-    }
-    function kuvaVastus(){
-        if(xhr.readyState==4){
-            document.getElementById("vastus").innerHTML=xhr.responseText
+        let xhr=new XMLHttpRequest()
+        xhr.onreadystatechange=kuvaVastus
+        function mac(){
+            let p2ring="mac="+document.getElementById("input").value
+            xhr.open("GET", "t06?"+p2ring, true)
+            xhr.send(true)
         }
-    }    
+        function kuvaVastus(){
+            if(xhr.readyState==4){
+                document.getElementById("vastus").innerHTML=xhr.responseText
+            }
+        }    
 </script>
+<style>
+    #macform{
+        margin: 20px 0px 0px 35px;
+    }
+</style>
 </head>
 <body>
-    <form action="" method="get"></form>
-    <input type="text" value="" id="input" placeholder="XX:XX:XX:XX:XX:XX">MAC aadress <br>
-    <input type="button" value="Otsi" onclick="mac()">
-    <div id="vastus">Vastus</div>
+    <div id="macform">
+        <form action="" method="get"></form>
+        <label>Sisesta MAC aadress</label> <!-- 00:e0:4c, 00:23:DF, 00:16:6B -->
+        <input type="text" value="" id="input" placeholder="XX:XX:XX:XX:XX:XX">
+        <br>
+        <input type="button" id="search" value="Otsi" onclick="mac()">
+        <div id="vastus"></div>
+        
+    </div>
 </body>
 </html> 

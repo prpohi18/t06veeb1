@@ -23,7 +23,10 @@ public class Rakendus {
     }
     @RequestMapping("/t06")
     String macAddress(String mac){
-        return macConvert(mac);
+        if ((mac.length()==17 || mac.length()==8) && mac.substring(2,3).equals(":") && mac.substring(5,6).equals(":")){
+            return macConvert(mac);
+        }
+        return "Sisesta andmed õigel kujul";
     }
  
     public static void main(String[] args) {
