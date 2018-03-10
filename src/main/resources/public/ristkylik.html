@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Rakenduse kirjeldus</title>
+        <meta charset="UTF-8">
+        
+        <script>
+            let xhr= new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            
+            function sisestaArvud(){
+                let esimene = document.getElementById("pikkus").value;
+                let teine = document.getElementById("laius").value;
+                let aadress = "/ymbermoot?arv1="+esimene+"&arv2="+teine;
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                let yhik = document.getElementById("yhikud").options[document.getElementById("yhikud").selectedIndex].text;
+                document.getElementById("vastus").innerHTML="Ristküliku ymbermõõt on "+xhr.responseText + yhik;
+                }
+            }
+            
+        </script>    
+    </head>
+    <body>
+        <div>Ristküliku ümbermõõdu arvutamine</div>
+        <p>Sisesta ristküliku pikkus ja laius</p>
+        Pikkus<input type="number" id="pikkus"/>
+        Laius<input type="number" id="laius"/>
+        <select id="yhikud">
+            <option value="cm">cm</option>
+            <option value="mm">mm</option>
+            <option value="m">m</option>
+        </select><br><br>
+        <input type="button" value="Leia ümbermõõt" onclick="sisestaArvud()"/><br>
+        <span id="vastus"><span><br>
+        
+        
+     
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
