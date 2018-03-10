@@ -7,16 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Rakendus {
-	@RequestMapping("/algus")
-    String tervitusfunktsioon() {
-        return "Ahoi!";
+    @RequestMapping("/ruut")
+    public int ruut(int arv){
+        return arv*arv;
     }
-    
-    @RequestMapping("/tervitus")
-    String tervitus2(String eesnimi){
-        return "Tere, "+eesnimi;
-    }
- 
+    //http://localhost:8080/ruut?arv=arv*arv
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);

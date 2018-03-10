@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>kodutoo6</title>
+        <meta charset="UTF-8">
+        <script>
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            function ruut() {
+                let arv = document.getElementById("kast").value;
+                let aadress="/ruut?arv=arv*arv;";
+                xhr.open("GET", aadress, true);
+                xhr.send();
+            }
+            function kuvaVastus(){
+               if(xhr.readyState==4){
+                  document.getElementById("vastus").innerHTML=xhr.responseText;
+               }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>Ruut</h1>
+        <input type="number" id="kast">
+        <span id="vastus">Vastuse koht</span>
+        
+    </body>
+</html>
