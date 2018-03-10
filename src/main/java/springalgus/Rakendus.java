@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Rakendus{
 	@RequestMapping("/pindala")
 	float korrutamine(int arv1){
-		return (arv1*arv1*314)/100;
+		return arv1*arv1*3.14;
 	}
  
     public static void main(String[] args) {
