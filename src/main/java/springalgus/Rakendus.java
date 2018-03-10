@@ -25,9 +25,10 @@ public class Rakendus {
 	@RequestMapping("/ruutvorrand")
 		int lahendamine(int a, int b, int c){
 			String vastus;
-			if(a==0 or b==0 or c==0){
+			if(a==null || b==null || c==null){
 				vastus = "Lahend puudub, sisend ei tohi olla null";
-			}else{
+			}
+			else{
 				int x1 = (-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c)) ) / (2 * a);
 				int x2 = (-b - Math.sqrt(Math.pow(b, 2) - (4 * a * c)) ) / (2 * a);
 				vastus = ("X1 = "+x1+", X2 = "+ x2);
