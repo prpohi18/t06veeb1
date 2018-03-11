@@ -10,7 +10,7 @@ public class RakendusKMI {
 	
 	@RequestMapping("/kehamassiindeks")
 	double kmiarvutus(double kaal, double pikkus){
-		return kaal/(pikkus*pikkus);
+		return Math.round((kaal/(pikkus*pikkus))* 100d) / 100d;
 	}
  
     public static void main3(String[] args) {
