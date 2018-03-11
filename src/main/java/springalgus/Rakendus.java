@@ -13,8 +13,8 @@ public class Rakendus{
 	}
 	
 	@RequestMapping("/umbermoot")
-	double korrutus2(double arv2){
-		return(2*3.14*arv2);
+	double korrutus2(double arv1){
+		return(2*3.14*arv1);
 	}
     public static void main(String[] args){
 		//System.getProperties().put("server.port", 40305);

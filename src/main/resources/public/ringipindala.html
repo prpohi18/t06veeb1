@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ringi pindala arvutamine raadiuse abil</title>
+		<meta charset="utf-8">
+		<title>Ringi pindala ja ümbermõõdu arvutamine raadiuse abil</title>
 		<script>
 		let xhr=new XMLHttpRequest();
 		xhr.onreadystatechange=kuvaVastus;
@@ -14,7 +15,7 @@
 		let xhr2=new XMLHttpRequest();
 		xhr2.onreadystatechange=kuvaVastus2;
 		function arvutamine2(){
-			let p2ring="arv2="+document.getElementById("kast1").value;
+			let p2ring="arv1="+document.getElementById("kast1").value;
 				xhr2.open("GET", "umbermoot?"+p2ring, true);
 				xhr2.send(true);
 		}
@@ -26,7 +27,7 @@
 		
 		function kuvaVastus2(){
 			if(xhr2.readyState==4){
-				document.getElementById("vastus2").innerHTML=xhr.responseText;
+				document.getElementById("vastus2").innerHTML=xhr2.responseText;
 			}
 		}
 		</script>
