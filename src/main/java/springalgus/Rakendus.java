@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.RestController;
+import java.lang.Math;
+
 @RestController
 @SpringBootApplication
 public class Rakendus {
@@ -17,9 +19,14 @@ public class Rakendus {
         return "Tere, "+eesnimi;
     }
 	
-	@RequestMapping("/korrutus")
+	@RequestMapping("/arvutamine")
 	int korrutamine(int arv1, int arv2){
 		return arv1*arv2;
+	}
+	
+	@RequestMapping("/kmi")
+	int kehamassiindeks(int kaal, int pikkus){
+		return kaal / Math.pow(pikkus);
 	}
  
     public static void main(String[] args) {
