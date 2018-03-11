@@ -7,20 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Rakendus {
-	@RequestMapping("/algus")
-    String tervitusfunktsioon() {
-        return "Ahoi!";
-    }
-    
-    @RequestMapping("/tervitus")
-    String tervitus2(String name){
-        return "Tere, "+name;
-    }
-	
-	@RequestMapping("/multiply")
-	double multiply(double value1, double value2){
-		return value1*value2;
-	}
 	
 	@RequestMapping("/kmi")
 	String kmi(double weight, double length){
