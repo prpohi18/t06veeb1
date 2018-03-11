@@ -18,3 +18,6 @@ public class RakendusKMI {
         SpringApplication.run(RakendusKMI.class, args);
     }
 }
+
+
+//Heroku aadress on https://tund5.herokuapp.com/kmi.html
