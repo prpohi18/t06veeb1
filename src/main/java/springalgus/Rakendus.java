@@ -18,4 +18,5 @@ public class Rakendus{
     }
 }
 
+//https://ringipindala.herokuapp.com/ringipindala.html
 //java -jar  -Dserver.port=11503 target/boot3-1.0-SNAPSHOT.jar
