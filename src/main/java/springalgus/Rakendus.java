@@ -12,10 +12,6 @@ public class Rakendus{
 		return (arv1*arv1*3.14);
 	}
 	
-	@RequestMapping("/umbermoot")
-	double korrutus2(double arv1){
-		return(2*3.14*arv1);
-	}
     public static void main(String[] args){
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
