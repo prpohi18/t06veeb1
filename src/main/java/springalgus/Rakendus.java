@@ -24,7 +24,7 @@ public class Rakendus {
 	
 	@RequestMapping("/kmi")
 	String kmi(double weight, double length){
-		double bmi = weight/(length*length);
+		double bmi = Math.round(weight/(length*length) * 100.0) / 100.0;
 		String kmi = String.valueOf(bmi);
 		if (bmi<19){
 			kmi = kmi + ". Oled alakaaluline! ";
