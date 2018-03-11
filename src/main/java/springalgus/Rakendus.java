@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Rakendus{
 	@RequestMapping("/pindala")
-	double korrutamine(int arv1){
+	double korrutamine(double arv1){
 		return (arv1*arv1*3.14);
 	}
-    public static void main(String[] args) {
+	
+	@RequestMapping("/umbermoot")
+	double korrutus2(double arv2){
+		return(2*3.14*arv2);
+	}
+    public static void main(String[] args){
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
