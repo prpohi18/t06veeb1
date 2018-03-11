@@ -11,15 +11,22 @@
 				xhr.send(true);
 		}
 		
+		let xhr2=new XMLHttpRequest();
+		xhr2.onreadystatechange=kuvaVastus2;
 		function arvutamine2(){
 			let p2ring="arv2="+document.getElementById("kast1").value;
-				xhr.open("GET", "umbermoot?"+p2ring, true);
-				xhr.send(true);
+				xhr2.open("GET", "umbermoot?"+p2ring, true);
+				xhr2.send(true);
 		}
 		
 		function kuvaVastus(){
 			if(xhr.readyState==4){
 				document.getElementById("vastus").innerHTML=xhr.responseText;
+			}
+		
+		function kuvaVastus2(){
+			if(xhr2.readyState==4){
+				document.getElementById("vastus2").innerHTML=xhr.responseText;
 			}
 		}
 		</script>
@@ -30,6 +37,6 @@
 		<input type="number" value="5" id="kast1" /> 
 		<input type="button" value="Arvuta" onclick="arvutamine()", "arvutamine2()" />
 		<div id="vastus">vastuse koht</div>
-		<div id="vastus">vastuse koht</div>
+		<div id="vastus2">vastuse koht</div>
 	</body>
 </html>
