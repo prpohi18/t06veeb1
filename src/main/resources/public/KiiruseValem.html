@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Kiiruse valemiga arvutamine</title>
+			<script>
+				let xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=kuvaVastus;
+				function arvutamine(){
+					let p2ring="arv1="+document.getElementById("kast1").value+"&arv2="+document.getElementById("kast2").value;
+					xhr.open("GET", "korrutus?"+p2ring, true);
+					xhr.send(true);
+				}
+				function kuvaVastus(){
+					if(xhr.readyState==4){
+						document.getElementById("vastus1").innerHTML=xhr.responseText;}
+				}
+				
+				let xhr2=new XMLHttpRequest();
+				xhr2.onreadystatechange=kuvaVastus2;
+				function arvutamine2(){
+					let p2ring="arv1="+document.getElementById("kast3").value+"&arv2="+document.getElementById("kast4").value;
+					xhr2.open("GET", "jagatis?"+p2ring, true);
+					xhr2.send(true);
+				}
+				function kuvaVastus2(){
+					if(xhr2.readyState==4){
+						document.getElementById("vastus2").innerHTML=xhr2.responseText;}
+				}
+				let xhr3=new XMLHttpRequest();
+				xhr3.onreadystatechange=kuvaVastus3;
+				function arvutamine3(){
+					let p2ring="arv1="+document.getElementById("kast5").value+"&arv2="+document.getElementById("kast6").value;
+					xhr3.open("GET", "jagatis?"+p2ring, true);
+					xhr3.send(true);
+				}
+				function kuvaVastus3(){
+					if(xhr3.readyState==4){
+						document.getElementById("vastus3").innerHTML=xhr3.responseText;}
+				}
+		
+			</script>
+	</head>
+	<body>
+		<img src="kiirus.jpg" /><br />
+		<p><i>https://sisu.ut.ee/mehaanika/kiirus</i></p>
+		<p>Kiiruse valem on s = v * t</p>
+		<p>s - teepikkus (km)</p>
+		<p>v - kiirus (km/h)</p>
+		<p>t - aeg (h)</p>
+		<p>Andmeid sisestades arvesta, et teepikkus oleks <ins>kilomeetrites</ins> ja aeg <ins>tundides</ins>.</p>
+		<p></p>
+		<p>Teepikkuse arvutamine = v * t</p>
+		
+		<input type="number" value="0" id="kast1"/> * 
+		<input type="number" value="0" id="kast2"/>
+		<input type="button" value="Arvuta" onclick="arvutamine()" />
+		<div id="vastus1">Teepikkus on</div>
+		<p></p>
+		<p>Kiiruse arvutamine = s : t</p>
+		<input type="number" value="0" id="kast3"/> : 
+		<input type="number" value="0" id="kast4"/>
+		<input type="button" value="Arvuta" onclick="arvutamine2()" />
+		<div id="vastus2">Kiirus on</div>
+		<p></p>
+		<p>Aja arvutamine = s : v</p>
+		<input type="number" value="0" id="kast5"/> : 
+		<input type="number" value="0" id="kast6"/>
+		<input type="button" value="Arvuta" onclick="arvutamine3()" />
+		<div id="vastus3">Aeg on</div>
+	</body>
+</html>
