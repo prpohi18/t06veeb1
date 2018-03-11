@@ -1,2 +1,7 @@
 # t06veeb1
-Veebileht Spring Boot'i abil
+
+Kert Tamm
+
+Veebileht Spring Boot'iga
+
+https://tund5.herokuapp.com/kmi.html
