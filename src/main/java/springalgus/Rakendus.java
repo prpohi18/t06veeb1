@@ -23,7 +23,7 @@ public class Rakendus {
 		}
 	
 	@RequestMapping("/ruutvorrand")
-		int lahendamine(int a, int b, int c){
+		String lahendamine(int a, int b, int c){
 			int d = (pow(b, 2) - (4 * a * c));
 			int x1, x2;
 			if (d >= 0) {
