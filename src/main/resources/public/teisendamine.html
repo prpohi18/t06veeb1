@@ -17,6 +17,21 @@
        }
     }
 	
+	let xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=kuvaPindalaVastus;
+    function pindala(){
+       let p2ring="alus="+document.getElementById("alus").value+
+          "&k6rgus="+document.getElementById("k6rgus").value/document.getElementById("kast3").value;
+       xhr.open("GET", "teisendamine?"+p2ring, true);
+       xhr.send(true);
+    }
+    function kuvaPindalaVastus(){
+       if(xhr.readyState==4){
+          document.getElementById("vastus2").innerHTML=xhr.responseText;
+       }
+    }
+	
+	
    </script>
   </head>
   <body>
@@ -24,11 +39,12 @@
     <input type="number" value="5" id="kast1" /> X 
     <input type="number" value="6" id="kast2" />
     <input type="button" value="Arvuta" onclick="arvutamine()" />
-    <div id="vastus">vastuse koht</div>
-	<input type="number" value="5" id="kast3" /> X 
-    <input type="number" value="6" id="kast4" />
-    <input type="button" value="Teisenda" onclick="teisendamine()" />
-    <div id="vastus">vastuse koht</div>
+	<div id="vastus">vastuse koht</div>
+	<input type="number" value="alus" id="alus" /> X
+	<input type="number" value="k6rgus" id="k6rgus" /> /
+	<input type="number" value="2" id="kast3" /> X
+	<input type="button" value="Arvuta pindala" onclick="pindala()" />
+	<div id="vastus2">vastuse koht</div>
 	
   </body>
 </html>

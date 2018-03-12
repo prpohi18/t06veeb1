@@ -22,6 +22,12 @@ public class Rakendus {
 		return arv1*arv2;
 	}
 	
+	@RequestMapping("/teisendamine")
+	int teisendamine(int alus, int k6rgus){
+		return alus*k6rgus/2;
+	}
+		
+	
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
@@ -29,3 +35,5 @@ public class Rakendus {
 }
 
 //java -jar -Dserver.port=41125 target/boot3-1.0-SNAPSHOT.jar
+
+//T(°F) = T(°C) × 1.8 + 32
