@@ -2,4 +2,4 @@
 Veebileht Spring Boot'i abil
 
 
-https://noormetstest.herokuapp.com/
+https://noormetstest.herokuapp.com/ruutvorrand123.html
