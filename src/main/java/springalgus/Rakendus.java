@@ -25,7 +25,7 @@ public class Rakendus {
 	}
 	
 	@RequestMapping("/kmi")
-	int kehamassiindeks(int kaal, int pikkus){
+	double kehamassiindeks(int kaal, int pikkus){
 		return kaal / Math.pow(pikkus,2);
 	}
  
