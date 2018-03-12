@@ -14,14 +14,14 @@ public class Rakendus {
 			double p = (value1 + value2 + value3)/2;
 			double area = Math.sqrt(p*(p-value1)*(p-value2)*(p-value3));
 			surface = String.valueOf(area);
+			return "Kolmnurga pindala on "+ surface;
 		}else{
-			surface = "Ei ole kolmnurk!";
+			return  "Ei ole kolmnurk!";
 		}
-		return "Kolmnurga pindala on "+ surface;
     }
    
     public static void main(String[] args) {
-		//System.getProperties().put("server.port", 40305);
+		System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
 }
