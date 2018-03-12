@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programmeerimise põhikursus</title>
+    <script>
+    let xhr=new XMLHttpRequest()
+    xhr.onreadystatechange=kuvaVastus
+    function mac(){
+        let p2ring="mac="+document.getElementById("input").value
+        xhr.open("GET", "t06?"+p2ring, true)
+        xhr.send(true)
+    }
+    function kuvaVastus(){
+        if(xhr.readyState==4){
+            document.getElementById("vastus").innerHTML=xhr.responseText
+        }
+    }    
+</script>
+</head>
+<body>
+    <form onSubmit="mac()" action="" method="get"></form>
+    <input type="text" value="4" id="input">MAC aadress <br>
+    <input type="submit" value="Otsi" onclick="mac()">
+    <div id="vastus">Vastus</div>
+</body>
+</html> 
