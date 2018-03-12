@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Korrutamine</title>
+	<script>
+	let xhr = new XMLHttpRequest();
+	xhr.onreadystatechange=kuvaVastus;
+	function kmiarvutus(){
+		let p2ring="kaal="+document.getElementById("kast3").value+"&pikkus="+document.getElementById("kast4").value;
+		xhr.open("GET", "kmi?"+p2ring, true);
+		xhr.send(true);
+	}
+	function kuvaKmi(){
+		if(xhr.readyState==4){
+			document.getElementById("kmitulemus").innerHTML=xhr.responseText;
+		}
+		if (kmitulemus < 18.5 ) {
+            System.out.println("Alakaaluline");
+        }
+
+        else if (kmitulemus >= 18.5 && kmitulemus < 25) {
+            System.out.println("Normaalkaal");
+        }
+
+        else if (kmitulemus >= 25 && kmitulemus < 30) {
+            System.out.println("Ülekaaluline");
+        }
+
+        else if (kmitulemus >= 30) {
+            System.out.println("Rasvunud");
+        }
+	}
+	
+	function kuvaVastus(){
+		if(xhr.readyState==4){
+			document.getElementById("kmitulemus").innerHTML=xhr.responseText;
+		}
+	}
+	</script>
+	</head>
+<body>
+<img src="fatman.jpg" /><br />
+  <input type="number" value="84" id="kast3" /> kg /
+  <input type="number" value="2,00" id="kast4" /> m
+  <input type="button" value="Arvuta" onclick="kmiarvutus()" />
+  <div id="kmitulemus">kmi tuleb siia</div>
+</body>
