@@ -27,7 +27,7 @@ public class Rakendus {
 			if (d >= 0) {
 				x1 = (-b + Math.sqrt(d) ) / (2 * a);
 				x2 = (-b - Math.sqrt(d) ) / (2 * a);
-				return "X1= "+x1+"X2= "+x2;
+				return "X1= "+x1+" X2= "+x2;
 			} else {
 				return "Lahendid puuduvad";
 			}
@@ -35,7 +35,7 @@ public class Rakendus {
 	
  
     public static void main(String[] args) {
-		System.getProperties().put("server.port", 40328);
+		//System.getProperties().put("server.port", 40328);
         SpringApplication.run(Rakendus.class, args);
     }
 }
