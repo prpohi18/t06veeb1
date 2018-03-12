@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Ringi pindala ja ümbermõõdu arvutamine raadiuse abil</title>
+		<link rel="stylesheet"
+		type= "text/css"  
+		href="myStyle.css"/>
+		<script>
+		let xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=kuvaVastus;
+		function arvutaPindala(){
+			let p2ring="value1="+document.getElementById("kaatet1").value+"&value2="+document.getElementById("kaatet2").value+"&value3="+document.getElementById("kaatet3").value;
+			xhr.open("GET", "arvutaPindala?"+p2ring, true);
+			xhr.send(true);
+		}
+		function kuvaVastus(){
+			if(xhr.readyState==4){
+				document.getElementById("vastus").innerHTML=xhr.responseText;
+			}
+		}
+		</Script>
+	</head>
+
+<body id="page-body">
+
+<div id="container">
+	<p>Sisesta kolme kaateti suurused</p><br>
+	<input type="number" value="1" id="kaatet1" /><br> 
+	<input type="number" value="2" id="kaatet2" /><br>
+	<input type="number" value="3" id="kaatet3" /><br>
+	<input class="" type="button" value="Arvuta pindala" onclick="arvutaPindala()"/>
+	<div id="vastus"></div>
+</div>
+
+</body>
+</html> 

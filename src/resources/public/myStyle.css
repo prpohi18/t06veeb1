@@ -1,0 +1,10 @@
+body {
+    overflow: hidden;
+	font-family: "Optima";
+}
+
+.container {
+	margin: 200px;
+	padding: 0 50px;
+	font-size: 7;
+}
