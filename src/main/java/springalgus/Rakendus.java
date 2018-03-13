@@ -25,6 +25,13 @@ public class Rakendus {
 		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2);
 		return String.valueOf(vastus);
 	}
+	
+	@RequestMapping("/protsent/{arv1}/{arv2}")
+	String protsent(@PathVariable String arv1, @PathVariable String arv2){
+		if(arv1==null){return "esimene arv puudub";}
+		int vastus=(Integer.parseInt(arv1)*100)/Integer.parseInt(arv2);
+		return String.valueOf(vastus);
+	}
  
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);

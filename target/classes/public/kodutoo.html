@@ -7,7 +7,7 @@
 		xhr.onreadystatechange=kuvaVastus;
 		function saadaAndmed(){
 		let parameetrid="/"+document.getElementById("kast1").value+"/"+document.getElementById("kast2").value;
-			xhr.open("GET", "/protsent/"+parameetrid, true);
+			xhr.open("GET", "/korrutis/"+parameetrid, true);
 			xhr.send(true);
 		}
 		
@@ -19,11 +19,10 @@
 	</script>
 </head>
 <body>
-<h3>See "programm" arvutab protsendi.</h3>
-	Sinu punktid: <input type="number" id="kast1" /><br>
-	Max. Punktid :<input type="number" id="kast2" />
+	<input type="number" id="kast1" /> *
+	<input type="number" id="kast2" />
 	<input type="button" value="=" onclick="saadaAndmed()"/>
-	<div id="vastus">Protsent:</div>
+	<div id="vastus">vastuse koht</div>
 </body>
 
 </html>
