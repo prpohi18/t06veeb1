@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Percentage</title>
+    <script>
+		let xhr= new XMLHttpRequest();
+        xhr.onreadystatechange = showAns;
+
+        function getData(){
+                let parameters="b1="+document.getElementById("b1").value+"&b2="+document.getElementById("b2").value;
+                xhr.open("GET","perc?"+parameters,true);
+                xhr.send(true);
+        }
+
+        function showAns(){
+				if(xhr.readyState==4){
+				document.getElementById("ans").innerHTML = xhr.responseText;
+				}
+		}
+    </script>
+</head>
+<body>
+    <p>Protsendi arvutamine</p>
+    <p>Mitu</p>
+    <input type="number" id="b1" value="mitu">
+    <p>Millest</p>
+    <input type="number" id="b2" value="millest">
+    <input type="button" value="Arvuta" onclick="getData()">
+    <div id="ans">Protsent</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Division</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = showAns;
+
+        function getData(){
+                let parameters = "num1="+document.getElementById("num1").value+"&num2="+document.getElementById("num2").value;
+                xhr.open("GET","korrutis?"+parameters,true);
+                xhr.send(true);
+        }
+
+        function showAns(){
+				if(xhr.readyState==4){
+				document.getElementById("ans").innerHTML=xhr.responseText;
+				}
+		}
+    </script>
+</head>
+<body>
+    <input type="number" id="b1">
+    <input type="number" id="b2">
+    <input type="button" value="Arvuta" onclick="getData()">
+    <div id="ans">Vastus</div>
+</body>
+</html>
