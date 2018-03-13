@@ -28,7 +28,7 @@ public class App {
     @RequestMapping("/perc")
     double percentage(double b1, double b2) {
         return (b1/b2)*100;
-    }
+    } // http://javaspringboot.herokuapp.com/percentage.html
 
     public static void main(String[] args) {
         //System.getProperties().put("server.port", 40305);
