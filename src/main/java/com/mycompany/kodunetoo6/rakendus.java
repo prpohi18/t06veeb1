@@ -28,7 +28,8 @@ public class rakendus {
 
 
             return vastus;
-        //http://localhost:8080/korrutus?arv1=3&arv2=5
+        
+            
     }
     
     
@@ -38,4 +39,5 @@ public class rakendus {
     }
     
 }
-
+//heroku link
+//https://ruutvorrand.herokuapp.com/kodunet%C3%B6%C3%B6.html
