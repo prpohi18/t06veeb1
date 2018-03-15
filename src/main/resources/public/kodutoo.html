@@ -1,17 +1,29 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Kodutoo6</title>
-        <meta charset="UTF-8">
-        <script>
-
-        </script>
-    </head>
-    <body>
-        <h1>Ruut</h1>
-        <input type="number" id="kast"/>
-        <input type='button' value="arvuta" onclick="ruut()" />
-        <span id="vastus">Vastuse koht</span>
-        
-    </body>
+  <head>
+    <title>Arvutamine</title>
+	<script>
+	   var yhendus=new XMLHttpRequest();
+	   yhendus.onreadystatechange=andmedSaabusid;
+	   function vajutus(){
+	      var a1=document.getElementById("kast1").value;
+	      var a2=document.getElementById("kast2").value;
+	      yhendus.open("GET", "/geomeetriline_keskmine?arv1="+a1+"&arv2="+a2, true);
+		  yhendus.send();
+	   }
+	   function andmedSaabusid(){
+	      document.getElementById("vastus").innerHTML=yhendus.responseText;
+	   }
+	   //Koostage REST-funktsioon ja kliendileht
+	   //kolme arvu kronoloogilise keskmise leidmiseks
+	   //(esimesest ja viimasest arvust pool, keskmine tervikuna, summa jagada kahega)
+	</script>
+  </head>
+  <body>
+    <h1>Arvutamine</h1>
+	<input type="text" id="kast1" />
+	<input type="text" id="kast2" />
+	<input type="button" value="Arvuta" onclick="vajutus()"/>
+	<div id="vastus">Vastuse koht</div>
+  </body>
 </html>
