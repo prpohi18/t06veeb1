@@ -6,19 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
+
 public class Rakendus {
-	@RequestMapping("/algus")
-    String tervitusfunktsioon() {
-        return "Ahoi!";
+    @RequestMapping("/kolmnurk")
+    String korrutamine(int arv1, int arv2){
+        String vastus = "vastus";
+        int vaartus = (int) ((arv1*arv2)/2);
+        vastus = "Vastus on:"+ vaartus;
+            return vastus; 
     }
-    
-    @RequestMapping("/tervitus")
-    String tervitus2(String eesnimi){
-        return "Tere, "+eesnimi;
-    }
- 
+
     public static void main(String[] args) {
-		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
 }
+// https://kolmnurgapindala.herokuapp.com/newhtml.html
