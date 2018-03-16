@@ -20,3 +20,4 @@ public class Rakendus {
         SpringApplication.run(Rakendus.class, args);
     }
 }
+// https://kolmnurgapindala.herokuapp.com/newhtml.html
