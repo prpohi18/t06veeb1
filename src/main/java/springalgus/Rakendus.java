@@ -19,5 +19,4 @@ public class Rakendus {
     public static void main(String[] args) {
         SpringApplication.run(Rakendus.class, args);
     }
-    
 }
