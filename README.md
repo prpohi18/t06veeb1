@@ -5,6 +5,6 @@ Andmete sisestus ja vastuse näitamine HTML-lehel, tulemuse arvutamine Java REST
 
 Heroku link programmikoodi sisse kommentaariks
 
-#Heroku link  
+# Heroku link  
 
 https://springkodune1.herokuapp.com/korrutusleht.html
