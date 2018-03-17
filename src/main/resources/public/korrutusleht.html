@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hüpotenuusi leidmine</title>
+    <script>
+    let xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=kuvaVastus;
+    let xhr2=new XMLHttpRequest();
+    xhr2.onreadystatechange=kuvaPindala;
+    let xhr3=new XMLHttpRequest();
+    xhr3.onreadystatechange=kuvaÜmbermõõt;
+
+    function input(){
+        let p2ring="kaatet1=" + document.getElementById("kast1").value + "&kaatet2=" + document.getElementById("kast2").value;
+        return p2ring;
+    }
+
+    function arvutamine(){
+        xhr.open("GET", "pythagoras?" + input(), true);
+        xhr.send(true);
+    }
+    function pindala(){
+        xhr2.open("GET", "pindala?" + input(), true);
+        xhr2.send(true);
+    }
+    function ümbermõõt(){
+        xhr3.open("GET", "ümbermõõt?" + input(), true);
+        xhr3.send(true);
+    }
+
+    function kuvaVastus(){
+        if(xhr.readyState==4){
+            document.getElementById("vastus").innerHTML=xhr.responseText;
+        }
+    }
+    function kuvaPindala(){
+        if(xhr2.readyState==4){
+            document.getElementById("pindala").innerHTML=xhr2.responseText;
+        }
+    }
+    function kuvaÜmbermõõt(){
+        if(xhr3.readyState==4){
+            document.getElementById("umber").innerHTML=xhr3.responseText;
+        }
+    }
+    </script>
+</head>
+<body>
+    <img src="trig10.jpg" height="300" width="600"/><br />
+    <br>
+    <div id="a">Kaatet 1 =
+        <input type="number" value="0" id="kast1" /> 
+    </div>
+    <br>
+    <div id="b">Kaatet 2 =
+        <input type="number" value="0" id="kast2" />
+    </div>
+    <br>
+    <input type="button" value="Arvuta" onclick="arvutamine();pindala();ümbermõõt()" />
+    <br><br>
+    <label for="hüpotenuus">Hüpotenuus on:
+        <div id="vastus" style="display:inline-block;">null</div>
+    </label>
+    <br>
+    <label for="kolmPindala">Antud kolmnurga pindala on:
+        <div id="pindala" style="display:inline-block;">null</div>
+    </label>
+    <br>
+    <label for="kolmUmber">Antud kolmnurga ümbermõõt on:
+        <div id="umber" style="display:inline-block;">null</div>
+    </label>
+</body>
+</html>
