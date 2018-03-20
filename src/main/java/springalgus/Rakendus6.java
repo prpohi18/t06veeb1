@@ -13,7 +13,7 @@ public class Rakendus6 {
     String korrutamine(int arv1, int arv2) {
         String vastus;
         int vaartus;
-        vaartus = arv1/(arv2*arv2);
+        vaartus = arv1/((arv2/100)*(arv2/100));
         vastus = "Vastus on: " + vaartus;
             return vastus;
     }
