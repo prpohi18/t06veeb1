@@ -11,16 +11,15 @@
             function sisestaArvud(){
                 let a1=document.getElementById("kast1").value;
                 let a2=document.getElementById("kast2").value;
-                let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2
+                let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2;
                 xhr.open("GET", aadress, true);
                 xhr.send();
             }
             
             function kuvaVastus(){
-                document.getElementById("vastus").innerHTML=xhr.responseText;
-                //if (xhr.readyState == 4) {
-                //    document.getElementById("vastus").innerHTML=xhr.responseText;
-                //}
+                if (xhr.readyState == 4) {
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
             }
 	</script>
     </head>
@@ -29,6 +28,6 @@
         Kehakaal<input type="number" id="kast1" /><br>
 	Pikkus<input type="number" id="kast2" />
 	<input type="button" value="Arvuta" onclick="sisestaArvud()"/>
-	<div id="vastus">Vastuse koht</div>
+	<span id="vastus">Vastuse koht</span>
     </body>
 </html>
