@@ -18,8 +18,10 @@ public class Rakendus{
 	  try{
 		double a1=Double.parseDouble(arv1);
 		double a2=Double.parseDouble(arv2);
+              String arv3 = null;
+                double a3=Double.parseDouble(arv3);
 		return String.valueOf(Math.sqrt(a1*a2));
-	  } catch(Exception e){
+	  } catch(NumberFormatException e){
 		 return "Viga: "+e.getMessage();
 	  }
 	}
