@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Rakendus6 {
     @RequestMapping("/kehamassiindeks")
-    String korrutamine(int arv1, int arv2) {
+    String korrutamine(int arv1, double arv2) {
         String vastus;
-        double vaartus = (arv1/(Math.sqrt(Math.round(((arv2/100)*100)/100))));
+        double vaartus = (arv1/Math.sqrt(arv2));
         vastus = "Vastus on: " + vaartus;
             return vastus;
     }
