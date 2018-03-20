@@ -2,28 +2,32 @@
 <html>
     <head>
         <title>Kehamassiindeks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
-	   let xhr = new XMLHttpRequest();
-	   xhr.onreadystatechange = andmedSaabusid;
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = andmedSaabusid;
 	   
-           function vajutus(){
-	      let a1=document.getElementById("kast1").value;
-	      let a2=document.getElementById("kast2").value;
-              let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2"
-	      xhr.open("GET", aadress, true);
-		  xhr.send();
-	   }
-	   
-           function andmedSaabusid(){
-	      document.getElementById("vastus").innerHTML=yhendus.responseText;
-	   }
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true);
+                xhr.send();
+            }
+            
+            function kuvaVastus(){
+                if (xhr.readyState == 4) {
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
 	</script>
     </head>
     <body>
         <h1>Kehamassiindeks</h1>
-        <input type="text" id="kast1" /><br>
-	<input type="text" id="kast2" />
-	<input type="button" value="Arvuta" onclick="vajutus()"/>
+        Kehakaal<input type="number" id="kast1" /><br>
+	Pikkus<input type="number" id="kast2" />
+	<input type="button" value="Arvuta" onclick="sisestaArvud()"/>
 	<div id="vastus">Vastuse koht</div>
     </body>
 </html>
