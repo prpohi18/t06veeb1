@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kehamassiindeks</title>
+        <script>
+	   let xhr = new XMLHttpRequest();
+	   xhr.onreadystatechange = andmedSaabusid;
+	   
+           function vajutus(){
+	      let a1=document.getElementById("kast1").value;
+	      let a2=document.getElementById("kast2").value;
+              let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2"
+	      xhr.open("GET", aadress, true);
+		  xhr.send();
+	   }
+	   
+           function andmedSaabusid(){
+	      document.getElementById("vastus").innerHTML=yhendus.responseText;
+	   }
+	</script>
+    </head>
+    <body>
+        <h1>Kehamassiindeks</h1>
+        <input type="text" id="kast1" /><br>
+	<input type="text" id="kast2" />
+	<input type="button" value="Arvuta" onclick="vajutus()"/>
+	<div id="vastus">Vastuse koht</div>
+    </body>
+</html>
