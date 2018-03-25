@@ -19,7 +19,7 @@ public class Rakendus {
         return "Tere, "+eesnimi;
     }
 	
-	@RequestMapping("/arvutamine")
+	@RequestMapping("/korrutus")
 	int korrutamine(int arv1, int arv2){
 		return arv1*arv2;
 	}
