@@ -5,6 +5,7 @@
 	<script>
 	let xhr = new XMLHttpRequest();
 	xhr.onreadystatechange=kuvaVastus;
+	xhr.onreadystatechange=kuvaKmi;
 	function kmiarvutus(){
 		let p2ring="kaal="+document.getElementById("kast3").value+"&pikkus="+document.getElementById("kast4").value;
 		xhr.open("GET", "kmi?"+p2ring, true);
