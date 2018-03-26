@@ -15,29 +15,24 @@
 		if(xhr.readyState==4){
 			document.getElementById("kmitulemus").innerHTML=xhr.responseText;
 		}
+		var kmitulemus=parseFloat(document.getElementById("kmitulemus").innerHTML);
 		if (kmitulemus < 18.5 ) {
-            System.out.println("Alakaaluline");
+            document.getElementById("selgitus").innerHTML = "Alakaaluline";
         }
         else if (kmitulemus >= 18.5 && kmitulemus < 25) {
-            System.out.println("Normaalkaal");
+            document.getElementById("selgitus").innerHTML = "Normaalkaal";
         }
         else if (kmitulemus >= 25 && kmitulemus < 30) {
-            System.out.println("Ülekaaluline");
+            document.getElementById("selgitus").innerHTML = "Ülekaaluline";
         }
         else if (kmitulemus >= 30) {
-            System.out.println("Rasvunud");
+            document.getElementById("selgitus").innerHTML = "Rasvunud";
         }
 	}
 	
 	function kuvaVastus(){
 		if(xhr.readyState==4){
 			document.getElementById("kmitulemus").innerHTML=xhr.responseText;
-		}
-	}
-	
-	function kuvaVastus2(){
-		if(xhr.readyState==4){
-			document.getElementById("kuvaKmi").innerHTML=xhr.responseText;
 		}
 	}
 	</script>
@@ -48,5 +43,5 @@
   <input type="number" value="181" id="kast4" /> cm
   <input type="button" value="Arvuta" onclick="kmiarvutus()" />
   <div id="kmitulemus">kmi tuleb siia</div>
-  <div id="kuvaKmi">selgitus tuleb siia</div>
+  <div id="selgitus">selgitus tuleb siia</div>
 </body>
