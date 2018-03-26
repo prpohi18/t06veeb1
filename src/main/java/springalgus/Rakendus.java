@@ -23,8 +23,8 @@ public class Rakendus {
 	}
 	
 	@RequestMapping("/teisendus")
-	int teisendamine(int arv){
-		return arv * (1/3600);
+	int teisendamine(double arv){
+		return arv * double(1.0/3600);
 	}
 				
     public static void main(String[] args) {
