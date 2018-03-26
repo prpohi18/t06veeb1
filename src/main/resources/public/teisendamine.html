@@ -7,8 +7,7 @@
     let xhr=new XMLHttpRequest();
     xhr.onreadystatechange=kuvaVastus;
     function arvutamine(){
-       let p2ring="arv="+document.getElementById("kast1").value*
-          (1.0/3600);
+       let p2ring="arv="+document.getElementById("kast1").value;
        xhr.open("GET", "teisendus?"+p2ring, true);
        xhr.send(true);
     }
