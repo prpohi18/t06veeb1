@@ -21,6 +21,11 @@ public class Rakendus {
 	int korrutamine(int arv1, int arv2){
 		return arv1*arv2;
 	}
+	
+	@RequestMapping("/teisendus")
+	int teisendamine(int arv){
+		return arv * (1/3600);
+	}
 				
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
@@ -29,5 +34,3 @@ public class Rakendus {
 }
 
 //java -jar -Dserver.port=41125 target/boot3-1.0-SNAPSHOT.jar
-
-//T(°F) = T(°C) × 1.8 + 32
