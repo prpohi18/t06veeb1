@@ -8,12 +8,8 @@
     xhr.onreadystatechange=kuvaVastus;
     function arvutamine(){
        let p2ring="arv="+document.getElementById("kast1").value*
-          (1/3600);
-<<<<<<< HEAD
+          (int 1 / int 3600);
        xhr.open("GET", "teisendus?"+p2ring, true);
-=======
-       xhr.open("GET", "korrutus?"+p2ring, true);
->>>>>>> bf7d76b08337be4e8bdbf2ebec317052f2ef2a7e
        xhr.send(true);
     }
     function kuvaVastus(){
@@ -28,6 +24,6 @@
     <br><img src="javalogo52x88.gif" /><br />
     <input type="number" value="value" id="kast1" />
     <input type="button" value="Teisenda" onclick="arvutamine()" />
-	<div id="vastus">vastuse koht</div>	
+	<div id="vastus">Vastuse koht:</div>	
   </body>
 </html>
