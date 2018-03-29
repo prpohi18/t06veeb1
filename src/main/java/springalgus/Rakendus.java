@@ -17,4 +17,4 @@ public class Rakendus {
         SpringApplication.run(Rakendus.class, args);
     }
 }
-//https://frolserg.herokuapp.com/
+//https://frolserg.herokuapp.com/kodutoo.html
