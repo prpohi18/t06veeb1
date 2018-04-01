@@ -6,9 +6,10 @@
       let xhr=new XMLHttpRequest();
       xhr.onreadystatechange=kuvaVastus;
       function arvutamine(){
-        let p2ring ="arv1="+document.getElementById("kast1").value+
-          "&arv2="+document.getElementById("kast2").value;
-        xhr.open("GET", "korrutus?"+p2ring, true);
+        let p2ring ="side1="+document.getElementById("side1").value+
+          "&side2="+document.getElementById("side2").value+
+          "&degrees="+document.getElementById("degrees").value;
+        xhr.open("GET", "triangle?"+p2ring, true);
         xhr.send(true);
 
       }
@@ -21,11 +22,12 @@
     </script>
     </head>
     <body>
-      <img src="javalogo.gif" /><br/>
-      <input type="number" value="5" id="kast1"/>
-      <input type="number" value="6" id="kast2"/>
+      <img src="17.gif" /><br/>
+      <input type="number" placeholder=" AC pikkus" id="side1"/>
+      <input type="number" placeholder="CB pikkus" id="side2"/>
+      <input type="number" placeholder="C nurk" id="degrees"/>
       <input type="button" value="Arvuta" onclick="arvutamine()"/>
-      <div id="vastus">Vastus</div>
+      <span> AC on :</span><div id="vastus"></div>
 
     </body>
   </html>
