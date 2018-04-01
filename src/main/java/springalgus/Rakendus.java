@@ -22,6 +22,12 @@ public class Rakendus {
 			return arv1*arv2;
 		}
 
+		@RequestMapping("/triangle")
+		Double formula(double side1, double side2, double degrees ){
+			double radians=Math.toRadians(degrees);
+			return Math.pow(side1, 2)+Math.pow(side2, 2)-2*radians;
+		}
+
 
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
