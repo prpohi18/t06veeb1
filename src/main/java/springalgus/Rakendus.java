@@ -25,7 +25,7 @@ public class Rakendus {
 		@RequestMapping("/triangle")
 		Double formula(double side1, double side2, double degrees ){
 			double radians=Math.toRadians(degrees);
-			return Math.pow(side1, 2)+Math.pow(side2, 2)-2*radians;
+			return Math.sqrt(Math.pow(side1, 2)+Math.pow(side2, 2)-(2*side1*side2*Math.cos(radians)));
 		}
 
 
