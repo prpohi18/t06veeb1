@@ -16,7 +16,10 @@ public class Rakendus {
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
     }
- 
+    @RequestMapping("/pindala")
+    String index(){
+        return "index.html";
+    }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
