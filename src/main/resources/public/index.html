@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Korrapärase nelinurkse püramiidi ruumala arvuiamine</title>
+		<script>
+		let xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=kuvaVastus;
+		function arvutamine(){
+			let p2ring="pserv="+document.getElementById("kast1").value+"korgus="+document.getElementById("kast2").value;
+				xhr.open("GET", "nnPyraRuumala?"+p2ring, true);
+				xhr.send(true);
+		}
+		
+		function kuvaVastus(){
+			if(xhr.readyState==4){
+				document.getElementById("vastus").innerHTML=xhr.responseText;
+			}
+		}
+		
+		</script>
+	</head>
+	<body>
+		<p>Sisestage korrapärase nelinurkse püramiidi põhiserv koos kõrgusega.</p>
+		<img src="pyramiid.gif" /><br />
+        <input type="number" id="kast1" /> 
+        <input type="number" id="kast2" />
+		<input type="button" value="Arvuta" onclick="arvutamine()" />
+		<p>Sisestatud andmetega korrapärase nelinurkse püramiidi ruumala on: </p>
+		<div id="vastus">vastuse koht</div>
+	</body>
+</html>
