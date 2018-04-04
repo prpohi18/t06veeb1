@@ -7,7 +7,7 @@
 		let xhr=new XMLHttpRequest();
 		xhr.onreadystatechange=kuvaVastus;
 		function arvutamine(){
-			let p2ring="pserv="+document.getElementById("kast1").value+"korgus="+document.getElementById("kast2").value;
+			let p2ring="pserv="+document.getElementById("kast1").value+"&korgus="+document.getElementById("kast2").value;
 				xhr.open("GET", "nnPyraRuumala?"+p2ring, true);
 				xhr.send(true);
 		}
@@ -23,8 +23,8 @@
 	<body>
 		<p>Sisestage korrapärase nelinurkse püramiidi põhiserv koos kõrgusega.</p>
 		<img src="pyramiid.gif" /><br />
-        <input type="number" id="kast1" /> 
-        <input type="number" id="kast2" />
+        <input type="number" placeholder="Lisage põhiserva väärtus" id="kast1" /> 
+        <input type="number" placeholder="Lisage kõrguse väärtus" id="kast2" />
 		<input type="button" value="Arvuta" onclick="arvutamine()" />
 		<p>Sisestatud andmetega korrapärase nelinurkse püramiidi ruumala on: </p>
 		<div id="vastus">vastuse koht</div>
