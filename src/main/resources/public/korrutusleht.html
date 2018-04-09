@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Korrutamine</title>
+	<script>
+	let xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=kuvaVastus;
+	function leiaKMI(){
+		let p2ring="pikkus="+document.getElementById("kast1").value+"&kaal="+document.getElementById("kast2").value;
+		console.log(p2ring);
+			xhr.open("GET", "KMI?"+p2ring, true);
+			xhr.send(true);
+		}
+	function kuvaVastus(){
+		if(xhr.readyState==4){
+			document.getElementById("vastus").innerHTML=xhr.responseText;
+		}
+	}
+	</script>
+	<style>
+		body {text-align:center;}
+	</style>
+	</head>
+	
+	<body>
+	<img src="BMI.png" /><br/><br/>
+	<label>Pikkus sentimeetrites: </label>
+	<input type="number" placeholder="180" id="kast1" min="130" max="220"/><br/><br/>
+	<label>Kaal kilogrammides: </label>
+	<input type="number" placeholder="70"  id="kast2" min="20" max="500"/><br/><br/>
+	<input type="button" value="Arvuta" onclick="leiaKMI()" /><br/><br/>
+	<div id="vastus">vastuse koht</div>
+	</body>
+	
+</html>
