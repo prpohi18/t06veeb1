@@ -22,6 +22,9 @@ public class Rakendus {
         SpringApplication.run(Rakendus.class, args);
     }
 }
+// https://maiste6.herokuapp.com/korrutusleht.html
+
+
 
 //scl enable rh-maven33 bash
 //mvn package
