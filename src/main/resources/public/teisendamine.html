@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+	See programm aitab sul teisendada KM/HR -> KM/S!
+   <title>Teisendamine KM/HR -> KM/S</title>
+   <script>
+    let xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=kuvaVastus;
+    function arvutamine(){
+       let p2ring="arv="+document.getElementById("kast1").value;
+       xhr.open("GET", "teisendus?"+p2ring, true);
+       xhr.send(true);
+    }
+    function kuvaVastus(){
+       if(xhr.readyState==4){
+          document.getElementById("vastus").innerHTML=xhr.responseText;
+       }
+    }
+	
+   </script>
+  </head>
+  <body>
+    <br><img src="javalogo52x88.gif" /><br />
+    <input type="number" value="value" id="kast1" />
+    <input type="button" value="Teisenda" onclick="arvutamine()" />
+	<div id="vastus">Vastuse koht:</div>	
+  </body>
+</html>
