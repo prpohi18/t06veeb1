@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = displayOutput
+        function calculateInterest(){
+            let request = "base="+ document.getElementById("base").value + 
+            "&duration=" + document.getElementById("duration").value 
+            + "&percent=" + document.getElementById("percent").value
+            
+            xhr.open("GET", "calcInterest?" + request, true)
+            xhr.send(true)
+        }
+        function displayOutput(){
+            if(xhr.readyState==4){
+                document.getElementById("result").innerHTML = xhr.responseText
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Intressikalkulaator</h2>
+    <label>Baassumma:</label>
+    <input type="number" id="base">
+    <label>Kestus:</label>
+    <input type="number" id="duration">
+    <label>Intressiprotsent:</label>
+    <input type="number" id="percent">
+    <input type="submit" onclick="calculateInterest()" />
+    <span id="result"></span>
+</body>
+</html>
