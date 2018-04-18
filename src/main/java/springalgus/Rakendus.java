@@ -19,7 +19,7 @@ public class Rakendus {
         return "Tere, "+eesnimi;
     }
 	
-	@RequestMapping("/korrutus/{arv1}/{arv2}")
+	@RequestMapping("/korrutamine/{arv1}/{arv2}")
 	String korrutamine(@PathVariable String arv1, @PathVariable String arv2){
 		if(arv1==null){return "esimene arv puudu";}
 		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2);
@@ -30,4 +30,14 @@ public class Rakendus {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
+	
+	@RequestMapping ("/iksid/{arv1}/{arv2}/{arv3}")
+	String korrutamine(@PathVariable String arv1, @PathVariable String arv2, @PathVariable String arv3){
+		if(arv1==null){return "esimene arv puudu";}
+		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2)*Integer.parseInt(arv2);
+		return String.valueOf(vastus);
+		
+	}
+	
 }
+	
