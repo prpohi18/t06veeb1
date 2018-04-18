@@ -12,7 +12,7 @@
 			}
 			function kuvaVastus(){
 				if(xhr.readyState==4){
-				document.getElementById("vastus").innerHTML=xhr.responseText;}
+				document.getElementById("vastus1").innerHTML=xhr.responseText;}
 			}
 		</script>
 	</head>
@@ -21,6 +21,6 @@
 		<input type="number" id="kast2" placeholder="bx" /> X
 		<input type="number" id="kast3" placeholder="c" /> = 0
 		<input type="button" value="=" onClick="saadaAndmed()" /> 
-		<div id="vastus">vastuse koht</div>
+		<div id="vastus1">vastuse koht</div>
 	</body>
 </html>
