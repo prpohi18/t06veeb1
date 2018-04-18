@@ -34,7 +34,7 @@ public class Rakendus {
 	@RequestMapping ("/iksid/{arv1}/{arv2}/{arv3}")
 	String diskriminant(@PathVariable String arv1, @PathVariable String arv2, @PathVariable String arv3){
 		if(arv1==null){return "esimene arv puudu";}
-		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2)*Integer.parseInt(arv3);
+		int vastus= Integer.parseInt(arv2)*Integer.parseInt(arv2)-4*Integer.parseInt(arv1)*Integer.parseInt(arv3);
 		return String.valueOf(vastus);
 		
 	}
