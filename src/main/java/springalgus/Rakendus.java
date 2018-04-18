@@ -11,27 +11,36 @@ import org.springframework.web.bind.annotation.RestController;
 public class Rakendus {
 	@RequestMapping("/algus")
     String tervitusfunktsioon() {
-        return "Ahoi!";
+        return "Hommikust!";
     }
     
-    @RequestMapping("/tervitus")
+    @RequestMapping("/tervitus") //Get'iga tavaline küsimine
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
-    }
-    
-    @RequestMapping("/korrutus/{arv1}/{arv2}")
-    String korrutamine(@PathVariable String arv1, @PathVariable String arv2){
-        if(arv1==null){return "esimene arv puudub";}
-        int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2);
-        return String.valueOf(vastus);
-    }
-   //http://greeny.cs.tlu.ee:40376/korrutus/4/7
-   
+    } //http://greeny.cs.tlu.ee:36770/tervitus?eesnimi=Grete
+	
+	@RequestMapping("/korrutus/{arv1}/{arv2}")
+	String korrutamine(@PathVariable String arv1, @PathVariable String arv2){
+		if(arv1==null){return "esimene arv puudub";}
+		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2);
+		return String.valueOf(vastus);
+	} ////http://greeny.cs.tlu.ee:36770/korrutus/4/7
+		//http://greeny.cs.tlu.ee:36770/korrutus?arv1=4&arv2=7
+
+	//Kehamassiindeks:	
+	@RequestMapping("/kmindeks/{pikkus}/{kaal}")
+	String arvutamine(@PathVariable String pikkus, @PathVariable String kaal){
+		if(pikkus==null){return "arv puudub";}
+		double pikkusRuut=Math.pow((Double.parseDouble(pikkus)/100),2);
+		double kmi=(Integer.parseInt(kaal)*1.0) / pikkusRuut;
+		return String.valueOf(kmi);
+	}
+	//https://programmeerimine.herokuapp.com/kehamassindeks.html
+	
+
+ 
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
 }
-//mvn package
-//java -jar -Dserver.port=55557 target/boot3-1.0-SNAPSHOT.jar
-//http://greeny.cs.tlu.ee:55557/arv?arv1=6&arv2=8
