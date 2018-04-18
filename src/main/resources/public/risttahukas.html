@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Arvutusleht</title>
+		<script>
+			let xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=kuvaVastus;
+			function saadaAndmed(){
+				let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value+"/"+document.getElementById("kast3").value;
+				xhr.open("GET", "/risttahukas/"+parameetrid, true);
+				xhr.send(true);
+			}
+			function kuvaVastus(){
+				if(xhr.readyState==4){
+				document.getElementById("vastus").innerHTML=xhr.responseText;}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="number" id="kast1" placeholder="a" />
+		<input type="number" id="kast2" placeholder="b" />
+    <input type="number" id="kast3" placeholder="c" />
+		<input type="button" value="=" onClick="saadaAndmed()" />
+		<div id="vastus1">vastuse koht</div>
+	</body>
+</html>
