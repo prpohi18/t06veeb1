@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Rakendus {
 	@RequestMapping("/algus")
     String tervitusfunktsioon() {
-        return "Ahoi!";
+        return "hey!";
     }
     
     @RequestMapping("/tervitus")
