@@ -35,7 +35,7 @@ public class Rakendus {
 	String diskriminant(@PathVariable String arv1, @PathVariable String arv2, @PathVariable String arv3){
 		if(arv1==null){return "esimene arv puudu";}
 		int vastus=Integer.parseInt(arv1)*Integer.parseInt(arv2)*Integer.parseInt(arv3);
-		return String.valueOf(vastus1);
+		return String.valueOf(vastus);
 		
 	}
 	
