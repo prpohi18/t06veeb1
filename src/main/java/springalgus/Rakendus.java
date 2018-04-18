@@ -29,7 +29,7 @@ public class Rakendus {
 	@RequestMapping("/risttahukas/{arv1}/{arv2}/{arv3}")
 	String lahendamine(@PathVariable String arv1, @PathVariable String arv2, @PathVariable String arv3){
 		if(arv1==null){return "esimene arv puudu";}
-		int vastus1=2*(Integer.parseInt(arv1)*Integer.parseInt(arv2)+Integer.parseInt(arv1)*Integer.parseInt(arv3)+ Integer.parseInt(arv2)*Integer.parseInt(arv3));
+		int vastus1=2*(Integer.parseInt(arv1)*Integer.parseInt(arv2)+Integer.parseInt(arv1)*Integer.parseInt(arv3)+Integer.parseInt(arv2)*Integer.parseInt(arv3));
 		return String.valueOf(vastus1);
 	}
 
