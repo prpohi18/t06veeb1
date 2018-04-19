@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Java Leht</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = kuvaVastus
+            
+            function add() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/liitmine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function subtract() {
+                console.log(1)
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/lahutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function multiply() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/korrutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function divide() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/jagamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>Arvutamine</div>
+        <input type="number" id="kast1" />
+        <input type="number" id="kast2" /> 
+        <input type="button" onclick="add()" value="+" />
+        <input type="button" onclick="subtract()" value="-" />
+        <input type="button" onclick="multiply()" value="*" />
+        <input type="button" onclick="divide()" value="/" />
+        <span id="vastus">Vastuse koht</span>
+    </body>
+</html>
