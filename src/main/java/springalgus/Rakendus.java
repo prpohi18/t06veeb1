@@ -40,9 +40,11 @@ public class Rakendus {
         double result = arv1 / arv2;
         return result;
      }
- 
+    
+    //heroku link koduneteet.herokuapp.com
+    
     public static void main(String[] args) {
-		System.getProperties().put("server.port", 40306);
+		//System.getProperties().put("server.port", 40306);
         SpringApplication.run(Rakendus.class, args);
     }
 }
