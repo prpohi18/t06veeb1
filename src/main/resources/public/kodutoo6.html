@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kehamassiindeks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = kuvaVastus;
+	   
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let aadress = "/kehamassiindeks?arv1="+a1+"&arv2="+a2;
+                xhr.open("GET", aadress, true);
+                xhr.send();
+            }
+            
+            function kuvaVastus(){
+                if (xhr.readyState == 4) {
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
+	</script>
+    </head>
+    <body>
+        <h1>Kehamassiindeks</h1>
+        Kehakaal<input type="number" id="kast1" /><br>
+	Pikkus (m)<input type="number" id="kast2" />
+        <input type="button" value="Arvuta" onclick="sisestaArvud()"/><br>
+	<span id="vastus">Vastuse koht</span>
+    </body>
+</html>
+
+<!--https://progev6.herokuapp.com/kodutoo6.html-->
