@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class Rakendus {
 	@RequestMapping("/surface")
     String surface(double value1, double value2, double value3) {
-		String surface = "";
 		if(value1 + value2 > value3 & value1 + value3 > value2 & value2 + value3 > value1){
 			double p = (value1 + value2 + value3)/2;
 			double area = Math.sqrt(p*(p-value1)*(p-value2)*(p-value3));
-			surface = String.valueOf(area);
+			String surface = String.valueOf(area);
 			return "Kolmnurga pindala on "+ surface;
 		}else{
 			return  "Ei ole kolmnurk!";
-		}
+    }
+    return "tootab vahemalt";
     }
    
     public static void main(String[] args) {
-		System.getProperties().put("server.port", 40305);
+		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
 }
