@@ -12,7 +12,7 @@
 			let xhr=new XMLHttpRequest();
 			xhr.onreadystatechange=showAnswer;
 			function surface(){
-				let query="value1="+document.getElementById("kaatet1").value+"&value2="+document.getElementById("kaatet2").value+"&value3="+document.getElementById("kaatet3").value;
+				let query="value1="+document.getElementById("line1").value+"&value2="+document.getElementById("line2").value+"&value3="+document.getElementById("line3").value;
 				xhr.open("GET", "surface?"+query, true);
 				xhr.send(true);
 			}
@@ -28,9 +28,9 @@
 
 <div id="container">
 	<p>Sisesta kolme kaateti suurused</p><br>
-	<input type="number" value="1" id="line1" /><br> 
-	<input type="number" value="2" id="line2" /><br>
-	<input type="number" value="3" id="line3" /><br>
+	<input type="number" value="" id="line1" /><br> 
+	<input type="number" value="" id="line2" /><br>
+	<input type="number" value="" id="line3" /><br>
 	<input class="" type="button" value="Arvuta pindala" onclick="surface()"/>
 	<div id="answer"></div>
 </div>
