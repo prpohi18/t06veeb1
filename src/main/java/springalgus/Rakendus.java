@@ -17,7 +17,6 @@ public class Rakendus {
 		}else{
 			return  "Ei ole kolmnurk!";
     }
-    return "tootab vahemalt";
     }
    
     public static void main(String[] args) {
