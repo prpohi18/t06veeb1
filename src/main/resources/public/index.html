@@ -8,23 +8,7 @@
         <script>
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = kuvaVastus
-            
-            function add() {
-                let a1=document.getElementById("kast1").value
-                let a2=document.getElementById("kast2").value
-                let aadress="/liitmine?arv1="+a1+"&arv2="+a2
-                xhr.open("GET", aadress, true)
-                xhr.send()
-            }
-            
-            function subtract() {
-                console.log(1)
-                let a1=document.getElementById("kast1").value
-                let a2=document.getElementById("kast2").value
-                let aadress="/lahutamine?arv1="+a1+"&arv2="+a2
-                xhr.open("GET", aadress, true)
-                xhr.send()
-            }
+            let aadress="/tervitus?eesnimi=guest"
             
             function multiply() {
                 let a1=document.getElementById("kast1").value
@@ -51,10 +35,9 @@
     </head>
     <body>
         <div>Arvutamine</div>
-        <input type="number" id="kast1" />
-        <input type="number" id="kast2" /> 
-        <input type="button" onclick="add()" value="+" />
-        <input type="button" onclick="subtract()" value="-" />
+        <p>SISESTA NUMBRID.</p>
+        <input type="text" id="kast1" />
+        <input type="text" id="kast2" /> 
         <input type="button" onclick="multiply()" value="*" />
         <input type="button" onclick="divide()" value="/" />
         <span id="vastus">Vastuse koht</span>
