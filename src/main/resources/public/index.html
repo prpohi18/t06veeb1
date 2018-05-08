@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ruudu arvutaja</title>
+        <meta charset="UTF-8">
+        <script>
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = kuvaVastus
+            
+            function ymbermoot() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/ymbermoot?kylg1="+k1+"&kylg2="+k2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function pindala() {
+                console.log(1)
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/ymbermoot?kylg1="+k1+"&kylg2="+k2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>Arvutamine</div>
+        <input type="number" id="kast1" />
+        <input type="number" id="kast2" /> 
+        <input type="button" onclick="ymbermoot()" value="Ymbermoot" />
+        <input type="button" onclick="pindala()" value="Pindala" />
+        <span id="vastus">Vastus</span>
+    </body>
+</html>
