@@ -22,13 +22,8 @@ public class Rakendus {
     }
 	
     @RequestMapping("/jagamine")
-    int jagamine(int arv1, int arv2){
-        return arv1/arv2;
-    }
-    
-    @RequestMapping("/liitmine")
-    int liitmine(int arv1, int arv2){
-        return arv1+arv2;
+    int jagamine(int arv3, int arv4){
+        return arv3/arv4;
     }
  
     public static void main(String[] args) {
