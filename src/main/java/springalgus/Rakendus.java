@@ -29,7 +29,8 @@ public class Rakendus {
         return result;
      }
 
-    
+    //https://janristkylik.herokuapp.com/
+	
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40306);
         SpringApplication.run(Rakendus.class, args);
