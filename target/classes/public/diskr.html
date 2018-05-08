@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DiskrLEHT</title>
+		<script>
+			let xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=kuvaVastus;
+			function saadaAndmed(){
+				let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value+"/"+document.getElementById("kast3").value;
+				xhr.open("GET", "/iksid/"+parameetrid, true);
+				xhr.send(true);
+			}
+			function kuvaVastus(){
+				if(xhr.readyState==4){
+				document.getElementById("vastus").innerHTML=xhr.responseText;}
+			}
+		</script>
+	</head>
+	<body>	
+		<input type="number" id="kast1" placeholder="ax^2" /> X
+		<input type="number" id="kast2" placeholder="bx" /> X
+		<input type="number" id="kast3" placeholder="c" /> = 0
+		<input type="button" value="=" onClick="saadaAndmed()" /> 
+		<p>Diskrimenant vordub </p>
+		<div id="vastus">vastuse koht</div>
+	</body>
+</html>
