@@ -1,0 +1,5 @@
+Java kursuse Spring Boot raamistiku harjutuslehestik
+
+java -jar -Dserver.port=40300 target/boot3-1.0-SNAPSHOT.jar
+mvn package
+java -cp target/testid-1.jar kabe.Proov1

@@ -1,0 +1,39 @@
+<!doctype html>
+
+
+<html>
+<head>
+<title>Arvutusleht</title>
+	<script>
+		let xhr= new XMLHttpRequest();
+		xhr.onreadystatechange=kuvaVastus;
+		function saadaAndmed(x) {
+			if (x== "korruta") {
+				let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value;
+				xhr.open("GET", "/korrutus/"+parameetrid, true);
+				xhr.send(true);
+			} else {
+				let parameetrid=document.getElementById("kast3").value+"/"+document.getElementById("kast4").value;
+				xhr.open("GET", "/jagatis/"+parameetrid, true);
+				xhr.send(true);
+			}
+		}
+		function kuvaVastus() {
+			if(xhr.readyState==4){
+			document.getElementById("vastus").innerHTML=xhr.responseText;
+			}
+		}
+	</script>
+</head>
+
+<body>
+<input type="number" id="kast1" /> X
+<input type="number" id="kast2" />
+<input type="button" value="=" onClick="saadaAndmed('korruta')"/> 
+<br>
+<input type="number" id="kast3" /> /
+<input type="number" id="kast4" />
+<input type="button" value="=" onClick="saadaAndmed('jaga')"/> 
+<div id="vastus">Vastuse koht</div>
+</body>
+</html>
