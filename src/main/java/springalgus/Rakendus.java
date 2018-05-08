@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Rakendus {
-	@RequestMapping("/algus")
+    @RequestMapping("/algus")
     String tervitusfunktsioon() {
         return "Ahoi!";
     }
@@ -16,9 +16,22 @@ public class Rakendus {
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
     }
- 
+    
+    @RequestMapping("/ymbermoot")
+    double ymbermoot(int kylg1, int kylg2){
+        double result = 2*(kylg1) + 2*(kylg2);
+        return result;
+     }
+    
+    @RequestMapping("/pindala")
+    double pindala(int kylg1, int kylg2){
+        double result = kylg1 * kylg2;
+        return result;
+     }
+
+	
     public static void main(String[] args) {
-		//System.getProperties().put("server.port", 40305);
+		//System.getProperties().put("server.port", 40306);
         SpringApplication.run(Rakendus.class, args);
     }
 }
