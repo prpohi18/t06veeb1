@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Rakenduse kirjeldus</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- teen mongi koodijupi, et kasutaja paneb andmed sisse ja saab javast tulemuse -->
+        <script>
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;  
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let aadress="/korrutus?arv1="+a1+"&arv2="+a2;
+                xhr.open("GET", aadress, true);
+                xhr.send();
+            }
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+                
+            }
+            
+        </script>
+        
+        <div>Kursuse raames loodud proovilehestik. Fantastika!</div>
+        <input type="number" id="kast1" /> x
+        <input type="number" id="kast2" />
+        <input type="button" value="=" onclick="sisestaArvud()" />
+        <span id="vastus">Vastuse koht </span> 
+        <br />
+        Ülesanne: 
+        Koosta Java funktsioon, kuhu sissse antakse komadega eraldatud arvud Stringina, väljastatakse nende arvude summa 
+        <br /><br />
+        Koosta Javaskriptiga leht, us on kolm tekstivälja. Kasutaja sisestab iga välja sisse arvu, eelnevalt loodud Java funktsiooni abil leitakse nende arvude summa ja kuvatakse
+        <br /><br />
+        Täiendus: sisestavate arvude kogus pole piiratud.
+        
+    </body>
+</html>
