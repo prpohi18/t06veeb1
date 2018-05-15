@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>HW06 - veeb</title>
+        <title>Risttahuka ruumala kalkulaator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <!-- teen mongi koodijupi, et kasutaja paneb andmed sisse ja saab javast tulemuse -->
-        <script>
+                  
+        <!-- script andmete saatmiseks rakendus.java faili-->
+         <script>
             let xhr=new XMLHttpRequest();
             xhr.onreadystatechange=kuvaVastus;  
             function sisestaArvud(){
                 let a1=document.getElementById("kast1").value;
                 let a2=document.getElementById("kast2").value;
-                let aadress="/korrutus?arv1="+a1+"&arv2="+a2;
+                let a3=document.getElementById("kast3").value;
+                let aadress="/risttahukaruumala?arv1="+a1+"&arv2="+a2+"&arv3="+a3;
                 xhr.open("GET", aadress, true);
                 xhr.send();
             }
@@ -31,16 +28,28 @@ and open the template in the editor.
             
         </script>
         
-        <div>HW6</div>
-        Muutuja1<br>
-        <input type="number" id="kast1" /> 
-        <br><br>
-        Muutuja2<br>
-        <input type="number" id="kast2" />
-        <br>
-        <input type="button" value="Arvuta" onclick="sisestaArvud()" /><br>
-        <span id="vastus">Vastuse koht </span> 
+        <!-- HTML andmete sisestamiseks -->
+        <center>
+        <div>Risttahuka ruumala kalkulaator </div>  <br>
+        <img src="http://www.matemaatika.edu.ee/sisu/0153/joonis1.gif"
+        <br><br><br>
 
-        
+        Sisesta risttahuka pikkus
+        <br>
+        <input type="number" id="kast1" />  
+        <br>
+        Sisesta risttahuka laius
+        <br>
+        <input type="number" id="kast2" />  
+        <br>
+        Sisesta risttahuka korgus
+        <br>
+        <input type="number" id="kast3" />  
+        <br>
+        <input type="button" value="Arvuta!" onclick="sisestaArvud()" />
+        <br>
+        <span id="vastus">Risttahuka ruumala on: </span> 
+        <br>
+        </center>
     </body>
 </html>
