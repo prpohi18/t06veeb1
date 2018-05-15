@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arvu ruudu leidmine</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = kuvaVastus
+
+        function square() {
+            let n1=document.getElementById("box").value
+            //let n2 = document.getElementById("box2").value
+            //let aadress="/liitmine?arv1="+a1+"&arv2="+a2
+
+
+            let aadress="/ruut?arv="+n1
+            xhr.open("GET", aadress, true)
+            xhr.send()
+        }
+
+
+        function kuvaVastus() {
+            if(xhr.readyState==4) {
+                document.getElementById("vastus").innerHTML=xhr.responseText
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div> Arvu ruut </div>
+    <input type="number" id="box" />
+    <input type="button" value="arvuta" onclick="square()"><br/>
+    <span id="vastus">Vastuse koht</span>
+</body>
+</html>
