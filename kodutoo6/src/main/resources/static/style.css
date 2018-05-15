@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow-x: hidden;
+    background: #29c852;
+    background-size: cover;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+input {
+    height: 4vw;
+    width: 20vw;
+    font-size: 1.5vw;
+    text-align: center;
+    border-radius: 2px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#answerbox {
+    margin-top: 40vh;
+}
+
+#button {
+    margin-top: 1vh;
+    background-color: #299c51;
+}
+
+#answer {
+    color: white;
+    font-size: 3vw;
+    margin-top: 2vh;
+    font-family: 'Economica', sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
