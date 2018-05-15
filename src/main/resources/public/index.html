@@ -1,38 +1,42 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <title>Arvutusleht</title>
+        <title>Rakenduse kirjeldus</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- teen mongi koodijupi, et kasutaja paneb andmed sisse ja saab javast tulemuse -->
         <script>
             let xhr=new XMLHttpRequest();
-            xhr.onreadystatechange=kuvaVastus;
-            function lisaKast(){
-               document.getElementById("sisestus").innerHTML+=
-                 "<input type='number' /><br />"
-            }
-            function nupuVajutus(){
-               lisaKast();
-            }
-            function saadaAndmed(){
-              let kastid=document.getElementById("sisestus").getElementsByTagName("input");
-              sisu=Array.prototype.slice.call(kastid).map(kast => kast.value).join(",");
-              xhr.open("GET", "liidaArvud?sisu="+sisu, true);
-              xhr.send();             
+            xhr.onreadystatechange=kuvaVastus;  
+            function sisestaArvud(){
+                let a1=document.getElementById("kast1").value;
+                let a2=document.getElementById("kast2").value;
+                let aadress="/korrutus?arv1="+a1+"&arv2="+a2;
+                xhr.open("GET", aadress, true);
+                xhr.send();
             }
             function kuvaVastus(){
-               if(xhr.readyState==4){
-                  document.getElementById("vastus").innerHTML=xhr.responseText;
-               }
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+                
             }
-        </script>
-    </head>
-    <body onload='lisaKast(); lisaKast()'>
-        <h1>Arvutamine</h1>
-        <div id="sisestus">
             
-        </div>
-        <div id="vastus"></div>
-        <input type='button' value="lisa" onclick="nupuVajutus()" />
-        <input type='button' value="arvuta" onclick="saadaAndmed()" />
+        </script>
+        
+        <div>HW6</div>
+        <input type="number" id="kast1" /> x
+        <input type="number" id="kast2" />
+        <input type="button" value="=" onclick="sisestaArvud()" />
+        <span id="vastus">Vastuse koht </span> 
+
+        
     </body>
 </html>
