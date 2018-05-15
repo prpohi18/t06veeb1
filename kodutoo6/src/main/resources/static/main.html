@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liigaasta</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = showAnswer;
+
+        function check() {
+            let request = "year=" + document.getElementById("answerbox").value;
+            xhr.open("GET", "leapyear?" + request, true);
+            xhr.send(true);
+        }
+        function showAnswer() {
+            if (xhr.readyState = 4) {
+                document.getElementById("answer").innerHTML = xhr.responseText;
+            }
+        }
+    </script>
+
+
+
+</head>
+<body>
+
+<input type="number" placeholder="Sisesta aastaarv" id="answerbox"/>
+<input type="button" value="Kontrolli" onclick="check()" id="button" />
+<div id="answer"></div>
+</body>
+</html>
