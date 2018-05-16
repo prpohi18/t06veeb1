@@ -1,24 +1,25 @@
-/*package springalgus;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping; 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 @SpringBootApplication
+
 public class Rakendus {
-	@RequestMapping("/algus")
-    String tervitusfunktsioon() {
-        return "Ahoi!";
+    @RequestMapping("/ruut")
+    int square(int arv) {
+        int result = arv * arv;
+        return result;
     }
-    
-    @RequestMapping("/tervitus")
-    String tervitus2(String eesnimi){
-        return "Tere, "+eesnimi;
-    }
- 
+
     public static void main(String[] args) {
-		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
-}*/
+}
+/*
+https://kodutoo6springboot.herokuapp.com/
+*/
+

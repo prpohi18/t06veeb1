@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+	<title>Rakenduse kirjeldus</title>
+	<meta charset = "UTF-8">
+	<meta name = "viewpoit" content = "width=device-width, initial-scale = 1.0">
+	<script>
+	  let xhr = new XmlHttpRequest();
+	  xhr.onreadystatechange = kuvaVastus;
+	  function sisestaArvud() {
+	    let a1 = document.getElementById("kast1").value;
+		let a2 = document.getElementById("kast2").value;
+		let aadress = "/korrutis?arv1 = "+a1+"&arv2="+a2;
+		xhr.send();
+	  }
+	  function kuvaVastus() {
+		if(xhr.readyState == 4) {
+			document.getElementById("vastus"). innerHTML = xhr.responseText
+		}
+	  }
+	</script>
+ </head>
+ <body>
+   <div>Kursuse raames loodud proovilehestik</div>
+ </body>
+
+
+</html>
