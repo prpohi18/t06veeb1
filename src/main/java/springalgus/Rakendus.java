@@ -1,4 +1,4 @@
-package springalgus;
+/*package springalgus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,4 +21,4 @@ public class Rakendus {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
-}
+}*/
