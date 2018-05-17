@@ -17,7 +17,7 @@
             function saadaAndmed(){
                 let kastid=document.getElementById("sisestus").getElementsByTagName("input");
                 sisu=Array.prototype.slice.call(kastid).map(kast => kast.value).join(",");
-                xhr.open("GET", "/summa?sisu="+sisu, true);
+                xhr.open("GET", "/lahutamine?sisu="+sisu, true);
                 xhr.send();
             }
             function kuvaVastus(){
