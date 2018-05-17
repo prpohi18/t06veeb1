@@ -7,32 +7,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Rakendus {
-	@RequestMapping("/algus")
-    String tervitusfunktsioon() {
-        return "Ahoi!!";
-    }
-    
     @RequestMapping("/tervitus")
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
     }
     
-    @RequestMapping("/korrutus")
+    @RequestMapping("/jagamine")
     float korrutamine(float arv1, float arv2){
-        return arv1*arv2;
+        return arv1/arv2;
     }
     
-    @RequestMapping("/summa")
+    @RequestMapping("/lahutamine")
     public int arvudeLiitmine(String sisu){
         String[] m=sisu.split(",");
-        int summa=0;
+        int vahe=0;
         for(int i=0; i<m.length; i++){
-            summa+=Integer.parseInt(m[i].trim());
+            vahe-=Integer.parseInt(m[i].trim());
         }
-        //return summa;
+        return vahe;
         
-        return java.util.Arrays.stream(sisu.split(",")).
-                mapToInt(s -> Integer.parseInt(s.trim())).sum();
     }
  
     public static void main(String[] args) {
