@@ -20,7 +20,7 @@ public class Rakendus {
     @RequestMapping("/lahutamine")
     public int arvudeLiitmine(String sisu){
         String[] m=sisu.split(",");
-        int vahe=0;
+        int vahe=100;
         for(int i=0; i<m.length; i++){
             vahe-=Integer.parseInt(m[i].trim());
         }
