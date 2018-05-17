@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Rakenduse kirjeldus</title>
@@ -15,7 +10,7 @@ and open the template in the editor.
             function sisestaArvud(){
                 let a1=document.getElementById("kast1").value;
                 let a2=document.getElementById("kast2").value;
-                let aadress="/korrutus?arv1="+a1+"&arv2="+a2;
+                let aadress="/jagamine?arv1="+a1+"&arv2="+a2;
                 xhr.open("GET", aadress, true);
                 xhr.send();
             }
