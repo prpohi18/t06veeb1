@@ -1,37 +1,45 @@
-<!DOCTTYPE HTML>
+<!doctype html>
+
 <html>
 	<head>
 		<title>Arvutusleht</title>
 		<script>
-		let xhr=new XMLHttpRequest();
-		xhr.onreadystatechange=kuvaVastus;
-		
-		function saadaAndmed(){
-			let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value;
-			xhr.open("GET","/korrutus/"+parameetrid, true);
-			xhr.send(true);
+			let xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=kuvaVastus;
+			function saadaAndmed(){
+				let parameetrid=document.getElementById("kast1").value+"/"+document.getElementById("kast2").value;
+				
+				xhr.open("GET", "/korrutus/"+parameetrid, true);
+				xhr.send(true);
+			}
 			
+			
+			function saadaAndmed2(){
+				let parameetrid=document.getElementById("kast3").value+"/"+document.getElementById("kast4").value;
+				
+				xhr.open("GET", "/jagamine/"+parameetrid, true);
+				xhr.send(true);
 			}
 			
 			function kuvaVastus(){
 				if(xhr.readyState==4){
-					document.getElementById("vastus").innerHTML=xhr.responseText;
+				document.getElementById("vastus").innerHTML=xhr.responseText;
 				}
 			}
 		</script>
 	</head>
 	<body>
-		<input type="number" id="kast1" /> x
-		<input type="number" id="kast2" />
-		<input type="button" value="=" onclick="saadaAndmed()" />
-		<div id="vastus">vastuse koht</div>
-		
-		<br>
-		
-		<input type="number" id="kast3" /> x
-		<input type="number" id="kast4" />
-		<input type="button" value="=" onclick="saadaAndmed()" />
-		<div id="vastus">vastuse koht</div>
-		
+	
+	<input type="number" id="kast1" /> X
+	<input type="number" id="kast2" />
+	<input type="button" value="=" onclick="saadaAndmed()" />
+	<br>
+	<br>
+	<input type="number" id="kast3" /> /
+	<input type="number" id="kast4" />
+	<input type="button" value="=" onclick="saadaAndmed2()" />
+	<div id="vastus">vastuse koht </div>
+	
+	
 	</body>
 </html>
