@@ -22,6 +22,10 @@ public class Rakendus {
 		return arv1*arv2;
 		
 	}
+	@RequestMapping("/trapetsipindala")
+	int trapets(int alus1, int alus2, int kõrgus){
+		return (alus1 + alus2) /2 * kõrgus;
+	}	
  
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
