@@ -1,0 +1,4 @@
+Veeblilehestiku kirjeldus
+
+Siinne veebilehestik loodi Srping Boot rakenduse võimaluste 
+katsetamiseks Programmeerimise põhikursuse juures.
