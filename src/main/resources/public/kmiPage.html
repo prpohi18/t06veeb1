@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KMI kalkulaator</title>
+  <script>
+  let xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=showAnswer;
+	function kmi(){
+		let query="weight="+document.getElementById("box1").value+"&length="+document.getElementById("box2").value;
+		xhr.open("GET", "kmi?"+query, true);
+		xhr.send(true);
+	}
+	
+	function showAnswer(){
+		if(xhr.readyState==4){
+			document.getElementById("answer").innerHTML=xhr.responseText;
+		}
+	}
+	</script>
+</head>
+<body>
+        
+<img src="mees.jpg" /><br />
+<div class="container">
+    <h2>Kehamassiindeksi kalkulaator</h2>
+	<br>
+	Kaal (kg): <br>
+	<input type="number"  value="" id="box1" /> <br>
+	Pikkus (m): <br>
+	<input type="number"  value="" id="box2" />
+	<br>
+	<br>
+	<input class="btn" type="button" value="Arvuta" onclick="kmi()"/>
+	<br>
+	<br>
+	<div id="answer"></div>
+ </div>
+
+
+</body>
+</html>
