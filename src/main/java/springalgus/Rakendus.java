@@ -16,9 +16,24 @@ public class Rakendus {
     String tervitus2(String eesnimi){
         return "Tere, "+eesnimi;
     }
+	
+	@RequestMapping("/korrutus")
+	int korrutis(int arv1, int arv2) {
+		return arv1*arv2;
+	}
+		
+	@RequestMapping("/arvutus")
+	double arvutus(double reps, double weight) {
+		if (reps>1){
+			return (weight*(1+(reps/30)));
+		} else {
+			return 0;
+		}			
+	}
  
     public static void main(String[] args) {
-		//System.getProperties().put("server.port", 40305);
-        SpringApplication.run(Rakendus.class, args);
+		SpringApplication.run(Rakendus.class, args);
     }
 }
+
+//System.getProperties().put("server.port", 40355);
